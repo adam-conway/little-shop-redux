@@ -4,7 +4,6 @@ RSpec.describe 'User' do
       Merchant.create(name: 'Margaret')
 
       visit '/merchants'
-
       expect(page).to have_content('Margaret')
     end
 
