@@ -15,7 +15,7 @@ RSpec.describe 'User' do
       Merchant.create(name: 'Ali')
 
       visit 'merchants/2'
-      click_button 'Delete'
+      click_button 'delete'
 
       expect(current_path).to eq('/merchants')
       expect(Merchant.count).to eq(1)
