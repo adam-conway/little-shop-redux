@@ -12,7 +12,6 @@ class LittleShopApp < Sinatra::Base
     get '/merchants/:id/edit' do
       @merchant = Merchant.find(params[:id])
       erb :'merchants/edit'
-      redirect '/merchants'
     end
 
     get '/merchants/:id' do
@@ -24,5 +23,10 @@ class LittleShopApp < Sinatra::Base
       merchant = Merchant.new(params[:merchant])
       merchant.save
       redirect '/merchants'
+    end
+
+    put '/merchants/:id' do |id|
+      Merchant.update(id.to_i, params[:merchant])
+      redirect "/merchants/#{id}"
     end
 end
