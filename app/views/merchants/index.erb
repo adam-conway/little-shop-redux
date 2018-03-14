@@ -2,4 +2,8 @@
   <ul>
   <li><%= merchant.name %></li>
   </ul>
+  <form action="/merchants/<%= merchant.id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="delete"/>
+  </form>
 <% end %>
