@@ -1,5 +1,16 @@
-<% @merchants.each do |merchant| %>
-  <ul>
-  <li><%= merchant.name %></li>
-  </ul>
-<% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+      <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
+    <title>Merchants</title>
+  </head>
+  <body>
+    <% @merchants.each do |merchant| %>
+      <ul>
+        <li><%= merchant.name %></li>
+      </ul>
+    <% end %>
+  </body>
+</html>
