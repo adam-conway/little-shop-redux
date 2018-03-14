@@ -1,0 +1,7 @@
+<h1>Edit an Item</h1>
+<form action="/items/<%= @item.id %>" method='POST'>
+  <input type='hidden' name="_method" value='PUT' />
+  <input type='text' name="item[name]" placeholder="<%= @item.name %>"/><br/>
+  <input type='submit', value='Edit'/>
+</form>
+<br><a href="/items">Return to Item Index</a>
