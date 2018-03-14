@@ -4,7 +4,6 @@ RSpec.describe 'User' do
       Merchant.create(name: 'Ian')
 
       visit '/merchants/1/edit'
-      save_and_open_page
       fill_in "merchant[name]", with: 'Ian, eh?'
       click_button 'Edit'
 
