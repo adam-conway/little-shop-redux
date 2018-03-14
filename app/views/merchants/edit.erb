@@ -1,0 +1,7 @@
+<h1>Edit a Merchant</h1>
+<form action="/merchants/<%= @merchant.id %>" method='POST'>
+  <input type='hidden' name="_method" value='PUT' />
+  <input type='text' name="merchant[name]" placeholder="<%= @merchant.name %>"/><br/>
+  <input type='submit', value='Edit'/>
+</form>
+<br><a href="/merchants">Return to Merchant Index</a>
