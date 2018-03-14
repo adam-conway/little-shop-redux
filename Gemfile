@@ -6,12 +6,12 @@ gem 'activerecord'
 gem 'sinatra-activerecord'
 
 group :development, :test do
-  gem 'shotgun'
-  gem 'rspec'
-  gem 'rspec-core'
-  gem 'database_cleaner'
-  gem 'tux'
   gem 'capybara'
+  gem 'database_cleaner'
   gem 'launchy'
   gem 'rack-test'
+  gem 'rspec'
+  gem 'rspec-core'
+  gem 'shotgun'
+  gem 'tux'
 end

@@ -18,8 +18,5 @@ RSpec.configure do |c|
   c.after(:each) do
     DatabaseCleaner.clean
   end
-end
-
-RSpec.configure do |c|
   c.include Capybara::DSL
 end
