@@ -10,9 +10,11 @@
 
     <nav class='menu'>
       <p id='nav_title'>LittleShop</p>
-      <a id='merchants' href="/merchants">Merchants</a>
-      <a id='items' href="/items">Items</a>
-      <a id='invoices' href="/invoices">Invoices</a>
+      <div class='links'>
+        <a id='merchants' href="/merchants">Merchants</a>
+        <a id='items' href="/items">Items</a>
+        <a id='invoices' href="/invoices">Invoices</a>
+      </div>
     </nav>
 
     <header class='header'>
@@ -23,7 +25,13 @@
     <% @merchants.each do |merchant| %>
       <section class='display'>
         <ul>
-          <li><%= merchant.name %></li>
+          <li><a href="merchants/<%= merchant.id %>"><%= merchant.name %></a></li>
+          <li>
+            <form action="/merchants/<%= merchant.id %>" method="POST">
+              <input type="hidden" name="_method" value="PUT">
+              <input type="submit" value="edit"/>
+            </form>
+          </li>
           <li>
             <form action="/merchants/<%= merchant.id %>" method="POST">
               <input type="hidden" name="_method" value="DELETE">
