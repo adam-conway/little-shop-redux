@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+      <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
+    <title>Invoices</title>
+  </head>
+  <body>
+    <% @invoices.each do |invoice| %>
+      <ul>
+        <li><%= invoice.merchant_id %></li>
+        <li><%= invoice.status %></li>
+      </ul>
+      <form action="/invoices/<%= invoice.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="delete"/>
+      </form>
+    <% end %>
+  </body>
+
+
+</html>
