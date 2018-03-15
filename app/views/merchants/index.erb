@@ -19,27 +19,26 @@
 
     <header class='header'>
       <p id='header_title'>Merchants</p>
-      <a class='create_link' href="/merchants/new">Create A New Merchant</a>
+      <a class='create_link' href="/merchants/new">
+        <button type="button"> Create a New Merchant </button>
+      </a>
     </header>
-
-    <% @merchants.each do |merchant| %>
-      <section class='display'>
-        <ul>
-          <li><a href="merchants/<%= merchant.id %>"><%= merchant.name %></a></li>
-          <li>
-            <form action="/merchants/<%= merchant.id %>" method="POST">
-              <input type="hidden" name="_method" value="PUT">
-              <input type="submit" value="edit"/>
-            </form>
-          </li>
-          <li>
-            <form action="/merchants/<%= merchant.id %>" method="POST">
-              <input type="hidden" name="_method" value="DELETE">
-              <input type="submit" value="delete"/>
-            </form>
-          </li>
-        </ul>
+      <section class ="background">
+        <section class="merchants_list">
+        <% @merchants.each do |merchant| %>
+          <section class='display'>
+            <a href="merchants/<%= merchant.id %>"><%= merchant.name %></a>
+              <form action="/merchants/<%= merchant.id %>" method="POST">
+                <input type="hidden" name="_method" value="PUT">
+                <input type="submit" value="edit"/>
+              </form>
+              <form action="/merchants/<%= merchant.id %>" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" value="delete"/>
+              </form>
+          </section>
+        <% end %>
       </section>
-    <% end %>
+    </section>
   </body>
 </html>
