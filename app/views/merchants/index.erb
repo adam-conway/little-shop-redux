@@ -18,7 +18,7 @@
     </nav>
 
     <header class='header'>
-      <p id='header_title'>Merchants</p>
+      <p id='header_title'>Merchants</p></br>
       <a class='create_link' href="/merchants/new">
         <button type="button"> Create a New Merchant </button>
       </a>
@@ -27,7 +27,8 @@
         <section class="merchants_list">
         <% @merchants.each do |merchant| %>
           <section class='display'>
-            <a href="merchants/<%= merchant.id %>"><%= merchant.name %></a>
+            <a class="link_to_show" href="merchants/<%= merchant.id %>"><%= merchant.name %></a>
+            <div class="buttons">
               <form action="/merchants/<%= merchant.id %>" method="POST">
                 <input type="hidden" name="_method" value="PUT">
                 <input type="submit" value="edit"/>
@@ -36,6 +37,7 @@
                 <input type="hidden" name="_method" value="DELETE">
                 <input type="submit" value="delete"/>
               </form>
+            </div>
           </section>
         <% end %>
       </section>
