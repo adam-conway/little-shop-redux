@@ -1,6 +1,7 @@
 require 'CSV'
 require './app/models/merchant.rb'
 require './app/models/item.rb'
+require './app/models/invoice.rb'
 
 class Seed
   CSV.foreach('data/merchants.csv', headers: true, header_converters: :symbol) do |row|
@@ -13,5 +14,11 @@ class Seed
                 price: row[:unit_price],
                 image: "https://avatars0.githubusercontent.com/u/7598370?s=400&v=4"
                 )
+  end
+
+  CSV.foreach('data/invoices.csv', headers: true, header_converters: :symbol) do |row|
+    Invoice.create(status: row[:status],
+                   merchant_id: row[:merchant_id]
+                  )
   end
 end
