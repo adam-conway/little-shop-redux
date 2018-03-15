@@ -15,7 +15,10 @@
       <a id='invoices' href="/invoices">Invoices</a>
     </nav>
 
-    <h1>Create New Item</h1>
+    <header class='header'>
+      <p id='header_title'>Create New Item</p>
+    </header>
+
     <form action='/items' method='POST'>
       <input type='text' name="item[title]" placeholder='Enter title'/><br/>
       <input type='text' name="item[description]" placeholder='Enter description'/><br/>

@@ -15,7 +15,6 @@
       <a id='invoices' href="/invoices">Invoices</a>
     </nav>
 
-    <a href="/merchants">Merchant</a>
     <h1><%= @merchant.name %></h1>
     <form action="/merchants/<%= @merchant.id %>" method="POST">
       <input type="hidden" name="_method" value="DELETE">

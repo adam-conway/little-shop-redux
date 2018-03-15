@@ -15,7 +15,10 @@
       <a id='invoices' href="/invoices">Invoices</a>
     </nav>
 
-    <h1>Edit an Item</h1>
+    <header class='header'>
+      <p id='header_title'>Edit An Item</p>
+    </header>
+
     <form action="/items/<%= @item.id %>" method='POST'>
       <input type='hidden' name="_method" value='PUT' />
       <input type='text' name="item[title]" value="<%= @item.title %>"/><br/>

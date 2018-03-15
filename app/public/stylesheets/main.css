@@ -68,3 +68,15 @@
 #invoices {
   padding-left: 10px;
 }
+
+form {
+  align-items: center;
+  padding-top: 10px;
+  border: 1px solid rgba(238,238,238 ,1);
+  border-radius: 5px;
+  box-shadow: 5px 10px 20px -20px rgba(85,172,238 ,1);
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  justify-content: space-between;
+}
