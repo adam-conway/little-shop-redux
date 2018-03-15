@@ -1,8 +1,30 @@
-<% @items.each do |item| %>
-  <ul>
-  <li><%= item.title %></li>
-  <li><%= item.description %></li>
-  <li><%= item.price %></li>
-  <li><%= item.image %></li>
-  </ul>
-<% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+      <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
+    <title>Merchants</title>
+  </head>
+  <body>
+
+    <nav class='menu'>
+      <p>LittleShop</p>
+      <ul>
+        <li><a href="/merchants">Merchants</a></li>
+        <li><a href="/items">Items</a></li>
+        <li><a href="/invoices">Invoices</a></li>
+      </ul>
+    </nav>
+
+    <% @items.each do |item| %>
+      <ul>
+      <li><%= item.title %></li>
+      <li><%= item.description %></li>
+      <li><%= item.price %></li>
+      <li><%= item.image %></li>
+      </ul>
+    <% end %>
+
+  </body>
+</html>
