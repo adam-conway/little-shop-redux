@@ -24,4 +24,12 @@ RSpec.describe Item do
       expect(item).to_not be_valid
     end
   end
+
+  describe 'Valid validations' do
+    it 'is valid with all params' do
+      item = Item.create(title: 'Adam', description: 'so cool', price: 575.04, image: 'url')
+
+      expect(item).to be_valid
+    end
+  end
 end

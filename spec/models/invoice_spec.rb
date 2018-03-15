@@ -1,5 +1,5 @@
 RSpec.describe Invoice do
-  describe 'Validations' do
+  describe 'Invalid validations' do
     it 'is invalid without any params' do
       invoice = Invoice.create
 
@@ -14,6 +14,14 @@ RSpec.describe Invoice do
       invoice = Invoice.create(merchant_id: 2)
 
       expect(invoice).to_not be_valid
+    end
+  end
+
+  describe 'Valid validations' do
+    it 'is valid with all params' do
+      invoice = Invoice.create(status: 'pending', merchant_id: 3)
+
+      expect(invoice).to be_valid
     end
   end
 end
