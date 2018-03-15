@@ -1,5 +1,6 @@
 class LittleShopApp < Sinatra::Base
   set :method_override, true
+  set :public_folder, 'public'
     get '/merchants' do
       @merchants = Merchant.all
       erb :'merchants/index'
@@ -29,7 +30,11 @@ class LittleShopApp < Sinatra::Base
       Merchant.update(id.to_i, params[:merchant])
       redirect "/merchants/#{id}"
     end
-
+  
+    delete '/merchants/:id' do |id|
+      Merchant.destroy(id.to_i)
+      redirect '/merchants'
+    end
 
     get '/items' do
       @items = Item.all
