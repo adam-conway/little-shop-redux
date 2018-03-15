@@ -6,6 +6,5 @@ RSpec.describe 'User' do
       visit '/merchants'
       expect(page).to have_content('Margaret')
     end
-
   end
 end
