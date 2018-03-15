@@ -1,5 +1,23 @@
-<a href="/items">Item Index</a>
-<h1><%= @item.title %></h1>
-<h1><%= @item.description %></h1>
-<h1><%= @item.price %></h1>
-<h1><%= @item.image %></h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+      <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
+    <title>Merchants</title>
+  </head>
+  <body>
+
+    <nav class='menu'>
+      <p id='title'>LittleShop</p>
+      <a id='merchants' href="/merchants">Merchants</a>
+      <a id='items' href="/items">Items</a>
+      <a id='invoices' href="/invoices">Invoices</a>
+    </nav>
+
+    <h1><%= @item.title %></h1>
+    <h1><%= @item.description %></h1>
+    <h1><%= @item.price %></h1>
+    <h1><%= @item.image %></h1>
+  </body>
+</html>

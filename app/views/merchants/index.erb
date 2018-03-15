@@ -3,20 +3,35 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
-      <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
     <title>Merchants</title>
   </head>
   <body>
+
+    <nav class='menu'>
+      <p id='nav_title'>LittleShop</p>
+      <a id='merchants' href="/merchants">Merchants</a>
+      <a id='items' href="/items">Items</a>
+      <a id='invoices' href="/invoices">Invoices</a>
+    </nav>
+
+    <header class='header'>
+      <p id='header_title'>Merchants</p>
+      <a class='create_link' href="/merchants/new">Create A New Merchant</a>
+    </header>
+
     <% @merchants.each do |merchant| %>
-      <ul>
-        <li><%= merchant.name %></li>
-      </ul>
-      <form action="/merchants/<%= merchant.id %>" method="POST">
-        <input type="hidden" name="_method" value="DELETE">
-        <input type="submit" value="delete"/>
-      </form>
+      <section class='display'>
+        <ul>
+          <li><%= merchant.name %></li>
+          <li>
+            <form action="/merchants/<%= merchant.id %>" method="POST">
+              <input type="hidden" name="_method" value="DELETE">
+              <input type="submit" value="delete"/>
+            </form>
+          </li>
+        </ul>
+      </section>
     <% end %>
   </body>
-
-
 </html>

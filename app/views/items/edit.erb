@@ -1,10 +1,32 @@
-<h1>Edit an Item</h1>
-<form action="/items/<%= @item.id %>" method='POST'>
-  <input type='hidden' name="_method" value='PUT' />
-  <input type='text' name="item[title]" value="<%= @item.title %>"/><br/>
-  <input type='text' name="item[description]" value="<%= @item.description %>"/><br/>
-  <input type='text' name="item[price]" value="<%= @item.price %>"/><br/>
-  <input type='text' name="item[image]" value="<%= @item.image %>"/><br/>
-  <input type='submit', value='Edit'/>
-</form>
-<br><a href="/items">Return to Item Index</a>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+      <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
+    <title>Merchants</title>
+  </head>
+  <body>
+
+    <nav class='menu'>
+      <p id='title'>LittleShop</p>
+      <a id='merchants' href="/merchants">Merchants</a>
+      <a id='items' href="/items">Items</a>
+      <a id='invoices' href="/invoices">Invoices</a>
+    </nav>
+
+    <header class='header'>
+      <p id='header_title'>Edit An Item</p>
+    </header>
+
+    <form action="/items/<%= @item.id %>" method='POST'>
+      <input type='hidden' name="_method" value='PUT' />
+      <input type='text' name="item[title]" value="<%= @item.title %>"/><br/>
+      <input type='text' name="item[description]" value="<%= @item.description %>"/><br/>
+      <input type='text' name="item[price]" value="<%= @item.price %>"/><br/>
+      <input type='text' name="item[image]" value="<%= @item.image %>"/><br/>
+      <input type='submit', value='Edit'/>
+    </form>
+    <br><a href="/items">Return to Item Index</a>
+  </body>
+</html>

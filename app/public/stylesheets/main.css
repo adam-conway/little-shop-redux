@@ -1,1 +1,82 @@
-body {background-color: green;}
+.menu {
+  height: 46px;
+  padding: 0 10px;
+  border: 1px solid rgba(238,238,238 ,1);
+  border-radius: 5px;
+  color: rgba(117,117,117 ,1);
+  box-shadow: 5px 10px 20px -20px rgba(85,172,238 ,1);
+  background-color: rgba(233, 232, 229, 1);
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.header {
+  align-items: center;
+  padding-bottom: 10px;
+  border: 1px solid rgba(238,238,238 ,1);
+  border-radius: 5px;
+  color: rgba(117,117,117 ,1);
+  box-shadow: 5px 10px 20px -20px rgba(85,172,238 ,1);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgba(233, 232, 229, 1);
+}
+
+.create_link {
+  border: 3px solid rgba(0, 0, 0, 1);
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 5px 10px 20px -20px rgba(238,238,238 ,1);
+}
+
+#header_title {
+  font-size: 50px;
+}
+
+#nav_title {
+  float: left;
+}
+
+#merchants {
+  padding-left: 10px;
+}
+
+.display {
+  align-items: center;
+  padding-top: 10px;
+  border: 1px solid rgba(238,238,238 ,1);
+  border-radius: 5px;
+  color: rgba(117,117,117 ,1);
+  box-shadow: 5px 10px 20px -20px rgba(85,172,238 ,1);
+  background-color: rgba(233, 232, 229, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.display ul {
+  display: flex;
+  flex-direction: row;
+}
+
+#items {
+  padding-left: 10px;
+}
+
+#invoices {
+  padding-left: 10px;
+}
+
+form {
+  align-items: center;
+  padding-top: 10px;
+  border: 1px solid rgba(238,238,238 ,1);
+  border-radius: 5px;
+  box-shadow: 5px 10px 20px -20px rgba(85,172,238 ,1);
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  justify-content: space-between;
+}

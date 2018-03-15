@@ -1,9 +1,31 @@
-<h1>Create New Item</h1>
-<form action='/items' method='POST'>
-  <input type='text' name="item[title]" placeholder='Enter title'/><br/>
-  <input type='text' name="item[description]" placeholder='Enter description'/><br/>
-  <input type='float' name="item[price]" placeholder='Enter price'/><br/>
-  <input type='text' name="item[image]" value='www.google.com'/><br/>
-  <input type='submit', value='Create'/>
-</form>
-<br><a href="/items">Return to Item Index</a>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+      <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
+    <title>Merchants</title>
+  </head>
+  <body>
+
+    <nav class='menu'>
+      <p id='title'>LittleShop</p>
+      <a id='merchants' href="/merchants">Merchants</a>
+      <a id='items' href="/items">Items</a>
+      <a id='invoices' href="/invoices">Invoices</a>
+    </nav>
+
+    <header class='header'>
+      <p id='header_title'>Create New Item</p>
+    </header>
+
+    <form action='/items' method='POST'>
+      <input type='text' name="item[title]" placeholder='Enter title'/><br/>
+      <input type='text' name="item[description]" placeholder='Enter description'/><br/>
+      <input type='float' name="item[price]" placeholder='Enter price'/><br/>
+      <input type='text' name="item[image]" value='www.google.com'/><br/>
+      <input type='submit', value='Create'/>
+    </form>
+
+  </body>
+</html>
