@@ -12,9 +12,9 @@ RSpec.describe 'User' do
   describe 'visits a specific invoice page' do
     it 'can delete an invoice' do
       Invoice.create(status: 'pending', merchant_id: 3)
-      Invoice.create(status: 'pending', merchant_id: 4)
+      invoice_2 = Invoice.create(status: 'pending', merchant_id: 4)
 
-      visit 'invoices/2'
+      visit "invoices/#{invoice_2.id}"
       click_button 'delete'
 
       expect(current_path).to eq('/invoices')
