@@ -28,8 +28,7 @@
             <a class="link_to_show" href="merchants/<%= merchant.id %>"><%= merchant.name %></a>
             <div class="buttons">
               <div class="edit_button">
-              <form action="/merchants/<%= merchant.id %>" method="POST">
-                <input type="hidden" name="_method" value="PUT">
+              <form action="/merchants/<%= merchant.id %>/edit" method="GET">
                 <input type="submit" value="edit"/>
               </form>
             </div>
