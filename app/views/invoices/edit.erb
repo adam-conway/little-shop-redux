@@ -1,3 +1,6 @@
+<body>
+<%= erb :'partials/navigation' %>
+
 <h1>Edit an Invoice</h1>
 <form action="/invoices/<%= @invoice.id %>" method='POST'>
   <input type='hidden' name="_method" value='PUT' />
@@ -6,3 +9,4 @@
   <input type='submit', value='Edit'/>
 </form>
 <br><a href="/invoices">Return to Invoice Index</a>
+</body>

@@ -7,6 +7,7 @@
     <title>Invoices</title>
   </head>
   <body>
+    <%= erb :'partials/navigation' %>
     <% @invoices.each do |invoice| %>
       <ul>
         <li><%= invoice.merchant_id %></li>

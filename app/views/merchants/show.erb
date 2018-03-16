@@ -8,14 +8,7 @@
   </head>
   <body class = "background">
 
-    <nav class='menu'>
-      <p class = "little_shop">LittleShop</p>
-      <div class='links'>
-        <a id='merchants' href="/merchants">Merchants</a>
-        <a id='items' href="/items">Items</a>
-        <a id='invoices' href="/invoices">Invoices</a>
-      </div>
-    </nav>
+    <%= erb :'partials/navigation' %>
 
     <header class='header'>
       <h1 id='header_title'><%= @merchant.name %></h1>
