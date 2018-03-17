@@ -21,6 +21,9 @@
   font-family: 'Helvetica';
 }
 
+.background {
+  background-color: #DDFFF7
+}
 .display {
   padding: 10px;
   background-color: #05A8AA;
@@ -37,27 +40,6 @@
   width: 50%;
   margin: 0 auto;
   padding-top: 35px;
-}
-
-.all_cards {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  margin: 0 auto;
-  padding-top: 35px;
-}
-.card {
-  padding: 10px;
-  background-color: #05A8AA;
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  align-items: center;
-  font-family: 'Helvetica';
-}
-
-.background {
-  background-color: #DDFFF7
 }
 
 .link_to_show {
@@ -135,7 +117,6 @@ a.create_button:active {
 #merchants {
   padding-left: 10px;
 }
-
 
 .display ul {
   display: flex;
