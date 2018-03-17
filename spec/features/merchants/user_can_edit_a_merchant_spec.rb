@@ -5,7 +5,7 @@ RSpec.describe 'User' do
 
       visit '/merchants/1/edit'
       fill_in "merchant[name]", with: 'Ian, eh?'
-      click_button 'Edit'
+      click_button 'Update Merchant'
 
       expect(page).to have_content('Ian, eh?')
       expect(current_path).to eq('/merchants/1')

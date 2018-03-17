@@ -1,6 +1,7 @@
 RSpec.describe 'User' do
   describe 'visits an edit invoice page' do
     it 'can edit a invoice' do
+      Merchant.create(name: 'store')
       Invoice.create(status: 'pending', merchant_id: 1)
 
       visit '/invoices/1/edit'

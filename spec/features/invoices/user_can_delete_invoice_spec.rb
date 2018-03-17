@@ -11,8 +11,10 @@ RSpec.describe 'User' do
   end
   describe 'visits a specific invoice page' do
     it 'can delete an invoice' do
-      Invoice.create(status: 'pending', merchant_id: 3)
-      Invoice.create(status: 'pending', merchant_id: 4)
+      Merchant.create(name: 'thing1')
+      Merchant.create(name: 'thing2')
+      Invoice.create(status: 'pending', merchant_id: 1)
+      Invoice.create(status: 'pending', merchant_id: 2)
 
       visit 'invoices/2'
       click_button 'delete'
