@@ -12,9 +12,9 @@ RSpec.describe 'User' do
   describe 'visits a specific merchant page' do
     it 'can delete a merchant' do
       Merchant.create(name: 'Ian')
-      Merchant.create(name: 'Ali')
+      merchant_2 = Merchant.create(name: 'Ali')
 
-      visit 'merchants/2'
+      visit "merchants/#{merchant_2.id}"
       click_button 'delete'
 
       expect(current_path).to eq('/merchants')

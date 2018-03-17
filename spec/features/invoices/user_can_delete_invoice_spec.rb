@@ -14,9 +14,9 @@ RSpec.describe 'User' do
       Merchant.create(name: 'thing1')
       Merchant.create(name: 'thing2')
       Invoice.create(status: 'pending', merchant_id: 1)
-      Invoice.create(status: 'pending', merchant_id: 2)
+      invoice_2 = Invoice.create(status: 'pending', merchant_id: 2)
 
-      visit 'invoices/2'
+      visit "invoices/#{invoice_2.id}"
       click_button 'delete'
 
       expect(current_path).to eq('/invoices')

@@ -12,9 +12,9 @@ RSpec.describe 'User' do
   describe 'visits a specific item page' do
     it 'can delete an item' do
       Item.create(title: 'Ian', description: 'help', price: 4.55, image: 'google.com')
-      Item.create(title: 'a', description: 'b', price: 4.55, image: 'c.com')
+      item_2 = Item.create(title: 'a', description: 'b', price: 4.55, image: 'c.com')
 
-      visit 'items/2'
+      visit "items/#{item_2.id}"
       click_button 'delete'
 
       expect(current_path).to eq('/items')
