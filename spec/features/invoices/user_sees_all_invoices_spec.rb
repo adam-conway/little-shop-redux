@@ -6,8 +6,8 @@ RSpec.describe 'User' do
 
 
       visit '/invoices'
-      expect(page).to have_content('pending')
-      expect(page).to have_content('shipped')
+      expect(page).to have_content(1)
+      expect(page).to have_content(2)
 
     end
   end

@@ -21,7 +21,11 @@
             <img src="<%= item.image %>"><br>
             <a class="link_to_show" href="items/<%= item.id %>"><%= item.title %></a>
             <%= item.price %>
-          </section>
+          <form action="/items/<%= item.id %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="delete"/>
+          </form>
+        </section>
         <% end %>
       </section>
     </section>
