@@ -4,30 +4,25 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
-    <title>Merchants</title>
+    <title>Items</title>
   </head>
   <body>
-
     <%= erb :'partials/navigation' %>
 
     <header class='header'>
-      <p id='header_title'>Items</p>
-      <a class='create_link' href="/items/new">Create A New Item</a>
+      <h1 id='header_title'>Items</h1></br>
+      <a class='create_button' href="/items/new">Create A New Item</a>
     </header>
-
-    <% @items.each do |item| %>
-      <section class='display'>
-        <ul>
-          <li><%= item.title %></li>
-          <li><%= item.description %></li>
-          <li><%= item.price %></li>
-          <li><%= item.image %></li>
-        </ul>
-        <form action="/items/<%= item.id %>" method="POST">
-          <input type="hidden" name="_method" value="DELETE">
-          <input type="submit" value="delete"/>
-        </form>
-      </section>
-    <% end %>
+    <section class="background">
+      <section class="all_cards">
+      <% @items.each do |item| %>
+        <section class="card">
+          <%= item.image %><br>
+          <a class="link_to_show" href="items/<%= item.id %>"><%= item.title %></a>
+          <%= item.price %>
+        </section>
+      <% end %>
+    </section>
+    </section>
   </body>
 </html>
