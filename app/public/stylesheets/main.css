@@ -72,10 +72,7 @@ input[type=submit] {
 	font-size: 12px;
 	padding: 10px 30px;
 	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
 	border: 1px solid rgba(0,0,0,0.3);
-	border-bottom-width: 3px;
 }
 
 input[type=submit]:hover {
@@ -88,16 +85,12 @@ a.create_button {
 	color: #FFF;
 	background-color: #E48681;
   border-color: rgba(0,0,0,0.3);
-  text-shadow: 0 1px 0 rgba(0,0,0,0.5);
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-size: 12px;
 	padding: 10px 30px;
 	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
 	border: 1px solid rgba(0,0,0,0.3);
-	border-bottom-width: 3px;
 }
 
 a.create_button:hover {
