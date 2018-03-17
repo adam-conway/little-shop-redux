@@ -32,4 +32,12 @@ RSpec.describe Item do
       expect(item).to be_valid
     end
   end
+
+  describe 'Class Methods' do
+    it 'can return total count of items' do
+      Item.create(title: 'Adam', description: 'not v cool', price: 575.04, image: 'url')
+
+      expect(Item.total_count).to eq(1)
+    end
+  end
 end
