@@ -12,5 +12,5 @@ RSpec.describe 'User' do
       expect(current_path).to eq('/invoices/1')
       expect(Invoice.count).to eq(1)
     end
-  end
+  end 
 end
