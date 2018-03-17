@@ -1,10 +1,28 @@
-
-<%= erb :'partials/navigation' %>
-
-<a href="/invoices">Invoice</a>
-<h1><%= @invoice.merchant_id %></h1>
-<h1><%= @invoice.status %></h1>
-<form action="/invoices/<%= @invoice.id %>" method="POST">
-  <input type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="delete"/>
-</form>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
+    <title>Invoice</title>
+  </head>
+  <body>
+  <%= erb :'partials/navigation' %>
+  <header class='header'>
+    <h1 id='header_title'>Invoice: <%= @invoice.merchant_id %> <%= @invoice.status %></h1></br>
+    <div class="buttons">
+      <div class="edit_button">
+      <form action="/invoices/<%= @invoice.id %>/edit" method="GET">
+        <input type="submit" value="edit"/>
+      </form>
+    </div>
+      <form action="/invoices/<%= @invoice.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="delete"/>
+      </form>
+    </div>
+  </header>
+  <section class="background">
+    Once we have item link, we'll add here.
+  </section>
+  </body>
