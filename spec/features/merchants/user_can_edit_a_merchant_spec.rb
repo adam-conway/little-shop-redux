@@ -11,5 +11,15 @@ RSpec.describe 'User' do
       expect(current_path).to eq('/merchants/1')
       expect(Merchant.count).to eq(1)
     end
+    it 'can cancel and go back to merchant' do
+      Merchant.create(name: 'Ian')
+
+      visit '/merchants/1/edit'
+      click_button 'Cancel'
+
+      expect(page).to have_content('Ian')
+      expect(current_path).to eq('/merchants/1')
+      expect(Merchant.count).to eq(1)
+    end
   end
 end
