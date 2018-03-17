@@ -7,4 +7,16 @@ class Item < ActiveRecord::Base
   def self.total_count
     self.all.count
   end
+
+  def self.average_price
+    self.average(:price).round(2)
+  end
+
+  def self.newest
+    self.order(:created_at).last.title
+  end
+
+  def self.oldest
+    self.order(:created_at).first.title
+  end
 end
