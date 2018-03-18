@@ -8,12 +8,7 @@
   </head>
   <body>
 
-    <nav class='menu'>
-      <p id='nav_title'>LittleShop</p>
-      <a id='merchants' href="/merchants">Merchants</a>
-      <a id='items' href="/items">Items</a>
-      <a id='invoices' href="/invoices">Invoices</a>
-    </nav>
+    <%= erb :'partials/navigation' %>
 
     <header class='header'>
       <p id='header_title'>Create New Merchant</p>
@@ -22,6 +17,9 @@
     <form action='/merchants' method='POST'>
       <input type='text' name="merchant[name]" placeholder='Enter name'/><br/>
       <input type='submit', value='Create'/>
+    </form>
+    <form action='/merchants' method='GET'>
+      <input type='submit', value='Cancel'/>
     </form>
   </body>
 </html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
+    <title>Items Dashboard</title>
+  </head>
+  <body>
+    <%= erb :'partials/navigation' %>
+
+    <header class='header'>
+      <h1 id='header_title'>Items Dashboard</h1></br>
+    </header>
+
+    Total Item Count
+    <%= @items.total_count %>
+    Average Price Per Item
+    <%= @items.average_price %>
+    Newest Item: <%= @items.newest %></br>
+    Oldest Item: <%= @items.oldest %>
+  </body>
+</html>

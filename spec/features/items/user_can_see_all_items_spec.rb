@@ -5,8 +5,15 @@ RSpec.describe 'User' do
       Item.create(title: 'a', description: 'b', price: 4.55, image: 'c.com')
 
       visit '/items'
-      expect(page).to have_content('help')
-      expect(page).to have_content('c.com')
+      expect(page).to have_content('Ian')
+      expect(page).to have_content(4.55)
+    end
+    it 'can navigate to the items dashboard' do
+      Item.create(title: 'Ian', description: 'help', price: 4.55, image: 'google.com')
+
+      visit '/items'
+      click_link('Items Dashboard')
+      expect(current_path).to eq('/items-dashboard')
     end
   end
 end
