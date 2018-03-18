@@ -49,6 +49,7 @@ RSpec.describe Item do
       expect(item.invoices.uniq.count).to eq 2
       expect(item.invoices.uniq).to eq [invoice2, invoice3]
     end
+  end
 
   describe 'Class Methods' do
     context '.total_count'
