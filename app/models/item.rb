@@ -27,4 +27,9 @@ class Item < ActiveRecord::Base
   def self.total_price
     self.sum(:price).round(2)
   end
+
+  def self.highest_priced_item
+    price = self.maximum(:price)
+    self.find_by(price: price)
+  end
 end

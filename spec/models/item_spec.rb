@@ -90,5 +90,13 @@ RSpec.describe Item do
           expect(Item.total_price).to eq(30)
         end
       end
+      context '.highest_priced_item' do
+        it 'returns the item with highest price' do
+          item1 = Item.create(title: 'name', description: 'lalala', price: 10, image: 'url')
+          item2 = Item.create(title: 'name2', description: 'ladeela', price: 20, image: 'url')
+
+          expect(Item.highest_priced_item).to eq(item2)
+        end
+      end
   end
 end

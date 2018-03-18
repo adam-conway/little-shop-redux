@@ -12,15 +12,14 @@
     <header class='header'>
       <h1 id='header_title'>Merchants Dashboard</h1></br>
     </header>
-    Merchant With Most Items: <% @merchants.most_items %> </br>
+    Merchant With Most Items: <%= @merchants.most_items.name %></br>
+    Merchant With Highest Priced Items: <%= @merchants.highest_priced_item %></br>
 
     <% @merchants.each do |merchant|%>
-      <%= merchant.name %>
-      <% merchant.items.each do |item| %>
-        <%= item.title %>
-      <% end  %>
-      <%= merchant.items.average_price %>
-      <%= merchant.items.total_price %>
+      <%= merchant.name %>:
+      Item Count: <%= merchant.items.count %>
+      Average Item Price: <%= merchant.items.average_price %>
+      Total Cost of Items: <%= merchant.items.total_price %>
     <% end  %>
 
   </body>
