@@ -16,7 +16,7 @@
         <section class="merchants_list">
           <% @invoices.each do |invoice| %>
           <section class='display'>
-          <a class="link_to_show" href="invoices/<%= invoice.id %>"><%= invoice.merchant_id %></a>
+          <a class="link_to_show" href="invoices/<%= invoice.id %>"><%= invoice.id %></a>
           <div class="buttons">
             <div class="edit_button">
               <form action="/invoices/<%= invoice.id %>/edit" method="GET">
