@@ -14,7 +14,8 @@ class Seed
                 title: row[:name],
                 description: row[:description],
                 price: row[:unit_price],
-                image: "https://avatars0.githubusercontent.com/u/7598370?s=400&v=4"
+                image: "https://avatars0.githubusercontent.com/u/7598370?s=400&v=4",
+                merchant_id: row[:merchant_id]
                 )
   end
 
