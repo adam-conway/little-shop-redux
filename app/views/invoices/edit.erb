@@ -14,13 +14,11 @@
 
   <form action="/invoices/<%= @invoice.id %>" method='POST'>
     <input type='hidden' name="_method" value='PUT' />
-    <!-- <input type='text' name="invoice[status]" value="<%= @invoice.status %>"/><br/> -->
-        <input list="statuses" name="status">
-        <datalist id="statuses">
-          <option name="invoice[status]" value="Pending">
-          <option name="invoice[status]" value="Shipped">
-          <option name="invoice[status]" value="Returned">
-        </datalist>
+        <select name="invoice[status]" id="statuses">
+          <option value="Pending">Pending</option>
+          <option value="Shipped">Shipped</option>
+          <option value="Returned">Returned</option>
+        </select>
     <input type='text' name="invoice[merchant_id]" value="<%= @invoice.merchant_id %>"/><br/>
     <input type='submit', value='Edit'/>
   </form>
