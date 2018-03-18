@@ -3,10 +3,11 @@ class Item < ActiveRecord::Base
   validates :description, presence: true
   validates :price, presence: true
   validates :image, presence: true
-  
+
+  belongs_to :merchant
   has_many :invoice_items
   has_many :invoices, through: :invoice_items
-  
+
   def self.total_count
     self.all.count
   end
