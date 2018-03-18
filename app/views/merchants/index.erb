@@ -7,21 +7,11 @@
     <title>Merchants</title>
   </head>
   <body>
-
-    <nav class='menu'>
-      <p id='nav_title'>LittleShop</p>
-      <div class='links'>
-        <a id='merchants' href="/merchants">Merchants</a>
-        <a id='items' href="/items">Items</a>
-        <a id='invoices' href="/invoices">Invoices</a>
-      </div>
-    </nav>
+    <%= erb :'partials/navigation' %>
 
     <header class='header'>
-      <p id='header_title'>Merchants</p></br>
-      <a class='create_link' href="/merchants/new">
-        <button type="button"> Create a New Merchant </button>
-      </a>
+      <h1 id='header_title'>Merchants</h1></br>
+      <a class='create_button' href="/merchants/new"> Create a New Merchant </a>
     </header>
       <section class ="background">
         <section class="merchants_list">
@@ -29,10 +19,11 @@
           <section class='display'>
             <a class="link_to_show" href="merchants/<%= merchant.id %>"><%= merchant.name %></a>
             <div class="buttons">
-              <form action="/merchants/<%= merchant.id %>" method="POST">
-                <input type="hidden" name="_method" value="PUT">
+              <div class="edit_button">
+              <form action="/merchants/<%= merchant.id %>/edit" method="GET">
                 <input type="submit" value="edit"/>
               </form>
+            </div>
               <form action="/merchants/<%= merchant.id %>" method="POST">
                 <input type="hidden" name="_method" value="DELETE">
                 <input type="submit" value="delete"/>

@@ -6,7 +6,8 @@
   display: flex;
   flex-direction: row;
   font-family: 'Helvetica';
-  /* justify-content: center; */
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .header {
@@ -20,8 +21,11 @@
   font-family: 'Helvetica';
 }
 
+.background {
+  background-color: #DDFFF7
+}
 .display {
-  padding-top: 10px;
+  padding: 10px;
   background-color: #05A8AA;
   display: flex;
   flex-direction: row;
@@ -30,28 +34,12 @@
   font-family: 'Helvetica';
 }
 
-
 .merchants_list {
   display: flex;
   flex-direction: column;
   width: 50%;
   margin: 0 auto;
   padding-top: 35px;
-  /* background-color: #05A8AA; */
-}
-
-
-.display form {
-  justify-content: flex-end;
-}
-
-.background {
-  background-color: #DDFFF7
-}
-
-.create_link {
-  background-color: rgba(255, 255, 255, 1);
-  box-shadow: 5px 10px 20px -20px rgba(238,238,238 ,1);
 }
 
 .link_to_show {
@@ -59,8 +47,60 @@
   flex-grow: 100;
 }
 
-.buttons {
+.buttons{
   display: flex;
+}
+
+a{
+  color: white;
+}
+
+a:hover {
+  color: #DB5461;
+}
+
+a:visited {
+  color: #E39774;
+}
+
+input[type=submit] {
+  display: inline-block;
+	color: #666;
+	background-color: #eee;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 12px;
+	padding: 10px 30px;
+	border-radius: 5px;
+	border: 1px solid rgba(0,0,0,0.3);
+}
+
+input[type=submit]:hover {
+  background-color: #e3e3e3;
+  border-color: rgba(0,0,0,0.5);
+}
+
+a.create_button {
+	display: inline-block;
+	color: #FFF;
+	background-color: #E48681;
+  border-color: rgba(0,0,0,0.3);
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 12px;
+	padding: 10px 30px;
+	border-radius: 5px;
+	border: 1px solid rgba(0,0,0,0.3);
+}
+
+a.create_button:hover {
+  background-color: #e3e3e3;
+  border-color: rgba(0,0,0,0.5);
+}
+
+a.create_button:active {
+  background-color: #CCC;
+  border-color: rgba(0,0,0,0.9);
 }
 
 #header_title {
@@ -70,7 +110,6 @@
 #merchants {
   padding-left: 10px;
 }
-
 
 .display ul {
   display: flex;
@@ -88,17 +127,13 @@
 form {
   align-items: center;
   padding-top: 10px;
-  border: 1px solid rgba(238,238,238 ,1);
-  border-radius: 5px;
-  box-shadow: 5px 10px 20px -20px rgba(85,172,238 ,1);
   display: flex;
   flex-direction: column;
   width: 75%;
   justify-content: space-between;
 }
 
-#nav_title {
+.little_shop {
   display: flex;
-  flex-direction: row;
-  justify-content: left;
+  flex-grow: 90;
 }

@@ -1,8 +1,27 @@
-<h1>Edit an Invoice</h1>
-<form action="/invoices/<%= @invoice.id %>" method='POST'>
-  <input type='hidden' name="_method" value='PUT' />
-  <input type='text' name="invoice[status]" value="<%= @invoice.status %>"/><br/>
-  <input type='text' name="invoice[merchant_id]" value="<%= @invoice.merchant_id %>"/><br/>
-  <input type='submit', value='Edit'/>
-</form>
-<br><a href="/invoices">Return to Invoice Index</a>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
+    <title>Edit an Invoice</title>
+  </head>
+<body>
+  <%= erb :'partials/navigation' %>
+  <header class='header'>
+    <h1 id='header_title'>Edit an Invoice</h1></br>
+  </header>
+
+  <form action="/invoices/<%= @invoice.id %>" method='POST'>
+    <input type='hidden' name="_method" value='PUT' />
+        <select name="invoice[status]" id="statuses">
+          <option value="Pending">Pending</option>
+          <option value="Shipped">Shipped</option>
+          <option value="Returned">Returned</option>
+        </select>
+    <input type='text' name="invoice[merchant_id]" value="<%= @invoice.merchant_id %>"/><br/>
+    <input type='submit', value='Edit'/>
+  </form>
+  <br><a href="/invoices">Return to Invoice Index</a>
+  </body>
+</html>

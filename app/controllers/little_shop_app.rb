@@ -95,4 +95,9 @@ class LittleShopApp < Sinatra::Base
       Invoice.destroy(id.to_i)
       redirect '/invoices'
     end
+
+    get '/items-dashboard' do
+      @items = Item.all
+      erb :'items/dashboard'
+    end
 end

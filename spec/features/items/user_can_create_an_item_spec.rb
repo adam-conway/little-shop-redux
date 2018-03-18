@@ -8,7 +8,8 @@ RSpec.describe 'User' do
       fill_in 'item[image]', with: 'www.facebook.com'
       click_button 'Create'
 
-      expect(page).to have_content('Is the best')
+      expect(page).to have_content('Adam')
+      expect(page).to have_content(55.55)
       expect(current_path).to eq('/items')
       expect(Item.count).to eq(1)
     end
