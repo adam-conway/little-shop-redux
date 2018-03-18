@@ -24,5 +24,20 @@
       </form>
     </div>
     </header>
+
+      <section class="all_cards">
+        <% @merchant.items.each do |item| %>
+        <section class="card">
+            <img src="<%= item.image %>"><br>
+            <a class="link_to_show" href="items/<%= item.id %>"><%= item.title %></a>
+            <%= item.price %>
+          <form action="/items/<%= item.id %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="delete"/>
+          </form>
+        </section>
+        <% end %>
+      </section>
+
   </body>
 </html>

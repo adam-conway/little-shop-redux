@@ -12,16 +12,18 @@
     <h1 id='header_title'>Edit an Invoice</h1></br>
   </header>
 
-  <form action="/invoices/<%= @invoice.id %>" method='POST'>
-    <input type='hidden' name="_method" value='PUT' />
+  <section class='entry_form'>
+    <form action="/invoices/<%= @invoice.id %>" method='POST'>
+      <input type='hidden' name="_method" value='PUT' />
         <select name="invoice[status]" id="statuses">
           <option value="Pending">Pending</option>
           <option value="Shipped">Shipped</option>
           <option value="Returned">Returned</option>
         </select>
-    <input type='text' name="invoice[merchant_id]" value="<%= @invoice.merchant_id %>"/><br/>
-    <input type='submit', value='Edit'/>
-  </form>
-  <a href="#" onclick="history.go(-1)">Cancel</a>
+      <input type='text' name="invoice[merchant_id]" value="<%= @invoice.merchant_id %>"/><br/>
+      <input type='submit', value='Edit'/>
+    </form>
+    <a href="#" onclick="history.go(-1)">Cancel</a>
+  </section>
   </body>
 </html>

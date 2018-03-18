@@ -14,14 +14,20 @@
       <p id='header_title'>Edit An Item</p>
     </header>
 
-    <form action="/items/<%= @item.id %>" method='POST'>
-      <input type='hidden' name="_method" value='PUT' />
-      <input type='text' name="item[title]" value="<%= @item.title %>"/><br/>
-      <input type='text' name="item[description]" value="<%= @item.description %>"/><br/>
-      <input type='text' name="item[price]" value="<%= @item.price %>"/><br/>
-      <input type='text' name="item[image]" value="<%= @item.image %>"/><br/>
-      <input type='submit', value='Edit'/>
-    </form>
-    <a href="#" onclick="history.go(-1)">Cancel</a>
+    <section class='entry_form'>
+      <form action="/items/<%= @item.id %>" method='POST'>
+        <input type='hidden' name="_method" value='PUT' />
+        Title:
+        <input type='text' name="item[title]" value="<%= @item.title %>"/><br/>
+        Description:
+        <input type='text' name="item[description]" value="<%= @item.description %>"/><br/>
+        Price:
+        <input type='text' name="item[price]" value="<%= @item.price %>"/><br/>
+        Image URL:
+        <input type='text' name="item[image]" value="<%= @item.image %>"/><br/>
+        <input type='submit', value='Edit'/>
+      </form>
+      <a href="#" onclick="history.go(-1)">Cancel</a>
+    </section>
   </body>
 </html>
