@@ -24,4 +24,19 @@ RSpec.describe Invoice do
       expect(invoice).to be_valid
     end
   end
+
+  describe 'Returning invoices' do
+    it 'Returns all invoices associated with item' do
+      invoice = Invoice.create(status: 'Pending', merchant_id: 10)
+      invoice_item1 = InvoiceItem.create(item_id: 1, invoice_id: 1, quantity: 10, unit_price: 123)
+      invoice_item2 = InvoiceItem.create(item_id: 2, invoice_id: 1, quantity: 15, unit_price: 15)
+      invoice_item3 = InvoiceItem.create(item_id: 3, invoice_id: 1, quantity: 20, unit_price: 163)
+      item1 = Item.create(id: 1, title: 'Adam', description: 'so cool', price: 575.04, image: 'url')
+      item2 = Item.create(id: 2, title: 'Help', description: 'test', price: 1.04, image: 'google')
+      item3 = Item.create(id: 3, title: 'Margaret', description: 'not cool', price: 10.04, image: 'facebook')
+
+      expect(invoice.items.uniq.count).to eq 3
+      expect(invoice.items.uniq).to eq [item1, item2, item3]
+    end
+  end
 end
