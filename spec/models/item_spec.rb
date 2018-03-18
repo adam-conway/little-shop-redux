@@ -82,5 +82,13 @@ RSpec.describe Item do
           expect(Item.oldest).to eq('name')
         end
       end
+      context '.total_price' do
+        it 'can return total price of items' do
+          Item.create(title: 'name', description: 'lalala', price: 10, image: 'url')
+          Item.create(title: 'name2', description: 'ladeela', price: 20, image: 'url')
+
+          expect(Item.total_price).to eq(30)
+        end
+      end
   end
 end

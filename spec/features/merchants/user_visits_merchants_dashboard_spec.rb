@@ -20,10 +20,18 @@ RSpec.describe 'User' do
       item3 = Item.create(title: 'Sal', description: 'kewl', price: 30, image: 'url', merchant_id: 2)
 
       visit '/merchants-dashboard'
-      save_and_open_page
+
       expect(page).to have_content(15)
     end
     it 'can see total price of all items for each merchant' do
+      merchant = Merchant.create(name: 'Margaret')
+      item1 = Item.create(title: 'Ali', description: 'da bomb', price: 10, image: 'url', merchant_id: 1)
+      item2 = Item.create(title: 'Ian', description: 'canadian', price: 20, image: 'url', merchant_id: 1)
+      item3 = Item.create(title: 'Sal', description: 'kewl', price: 30, image: 'url', merchant_id: 2)
+
+      visit '/merchants-dashboard'
+
+      expect(page).to have_content(30)
 
     end
     it 'can see the merchant with the most items and that merchants information' do

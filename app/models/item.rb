@@ -23,4 +23,8 @@ class Item < ActiveRecord::Base
   def self.oldest
     self.order(:created_at).first.title
   end
+
+  def self.total_price
+    self.sum(:price).round(2)
+  end
 end
