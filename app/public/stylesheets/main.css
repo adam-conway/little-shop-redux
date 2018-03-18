@@ -24,6 +24,7 @@
 .background {
   background-color: #DDFFF7
 }
+
 .display {
   padding: 10px;
   background-color: #05A8AA;
@@ -42,9 +43,25 @@
   padding-top: 35px;
 }
 
+.all_cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .link_to_show {
   display: flex;
+  flex-wrap: wrap;
   flex-grow: 100;
+}
+
+.card {
+  display: flex;
+  width: 300px;
+  flex-direction: column;
+  padding: 25px;
+
 }
 
 .buttons{
