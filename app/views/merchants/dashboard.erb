@@ -15,6 +15,10 @@
 
     <% @merchants.each do |merchant|%>
       <%= merchant.name %>
+      <% merchant.items.each do |item| %>
+        <%= item.title %>
+      <% end  %>
+      <%= merchant.items.average_price %>
     <% end  %>
 
   </body>
