@@ -14,4 +14,18 @@ RSpec.describe Merchant do
       expect(merchant).to be_valid
     end
   end
+
+  describe 'Class Methods' do
+    context '.most_items' do
+      it 'returns the name of the merchant with the most items' do
+        merchant1 = Merchant.create(name: 'Margaret')
+        merchant2 = Merchant.create(name: 'Adam')
+        item1 = Item.create(title: 'Ali', description: 'da bomb', price: 10, image: 'url', merchant_id: 1)
+        item2 = Item.create(title: 'Ian', description: 'canadian', price: 20, image: 'url', merchant_id: 1)
+        item3 = Item.create(title: 'Sal', description: 'kewl', price: 30, image: 'url', merchant_id: 2)
+
+        expect(Merchant.most_items).to eq(merchant1.name)
+      end
+    end
+  end
 end

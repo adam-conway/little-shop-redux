@@ -35,7 +35,15 @@ RSpec.describe 'User' do
 
     end
     it 'can see the merchant with the most items and that merchants information' do
+      merchant1 = Merchant.create(name: 'Margaret')
+      Merchant.create(name: 'Adam')
+      Item.create(title: 'Ali', description: 'da bomb', price: 10, image: 'url', merchant_id: 1)
+      Item.create(title: 'Ian', description: 'canadian', price: 20, image: 'url', merchant_id: 1)
+      Item.create(title: 'Sal', description: 'kewl', price: 30, image: 'url', merchant_id: 2)
 
+      visit '/merchants-dashboard'
+
+      expect(page).to have_content("Merchant With Most Items: #{merchant1.name}")
     end
     it 'can see the merchant with the highest priced item and that merchants information' do
 

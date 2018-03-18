@@ -12,6 +12,7 @@
     <header class='header'>
       <h1 id='header_title'>Merchants Dashboard</h1></br>
     </header>
+    Merchant With Most Items: <% @merchants.most_items %> </br>
 
     <% @merchants.each do |merchant|%>
       <%= merchant.name %>
