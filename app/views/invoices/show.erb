@@ -22,8 +22,23 @@
       </form>
     </div>
   </header>
+
   <section class="background">
     <a class="link_to_show" href="../merchants/<%= @invoice.merchant_id %>"><%=Merchant.find(@invoice.merchant_id).name%></a>
-    Once we have item link, we'll add here.
   </section>
+
+  <section class="all_cards">
+    <% @invoice.items.each do |item| %>
+    <section class="card">
+        <img src="<%= item.image %>"><br>
+        <a class="link_to_show" href="items/<%= item.id %>"><%= item.title %></a>
+        <%= item.price %>
+      <form action="/items/<%= item.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="delete"/>
+      </form>
+    </section>
+    <% end %>
+  </section>
+
   </body>
