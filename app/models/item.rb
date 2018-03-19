@@ -42,6 +42,5 @@ class Item < ActiveRecord::Base
     else
       "$#{self.price}"
     end
-
   end
 end
