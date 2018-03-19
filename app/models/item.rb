@@ -9,28 +9,28 @@ class Item < ActiveRecord::Base
   has_many :invoices, through: :invoice_items
 
   def self.total_count
-    self.all.count
+    all.count
   end
 
   def self.average_price
-    self.average(:price).round(2)
+    average(:price).round(2)
   end
 
   def self.newest
-    self.order(:created_at).last.title
+    order(:created_at).last.title
   end
 
   def self.oldest
-    self.order(:created_at).first.title
+    order(:created_at).first.title
   end
 
   def self.total_price
-    self.sum(:price).round(2)
+    sum(:price).round(2)
   end
 
   def self.highest_priced_item
-    price = self.maximum(:price)
-    self.find_by(price: price)
+    price = maximum(:price)
+    find_by(price: price)
   end
 
   def format_price

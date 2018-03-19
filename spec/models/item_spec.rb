@@ -1,5 +1,3 @@
-require 'pry'
-
 RSpec.describe Item do
   describe 'Validations' do
     it 'is invalid without a title' do
@@ -52,60 +50,61 @@ RSpec.describe Item do
   end
 
   describe 'Class Methods' do
-    context '.total_count'
+    context '.total_count' do
       it 'can return total count of items' do
         Item.create(title: 'Adam', description: 'not v cool', price: 575.04, image: 'url')
 
         expect(Item.total_count).to eq(1)
       end
-      context '.average_price' do
-        it 'can return average price of items' do
-          Item.create(title: 'name', description: 'lalala', price: 10, image: 'url')
-          Item.create(title: 'name2', description: 'ladeela', price: 20, image: 'url')
+    end
+    context '.average_price' do
+      it 'can return average price of items' do
+        Item.create(title: 'name', description: 'lalala', price: 10, image: 'url')
+        Item.create(title: 'name2', description: 'ladeela', price: 20, image: 'url')
 
-          expect(Item.average_price).to eq(15)
-        end
+        expect(Item.average_price).to eq(15)
       end
-      context '.newest' do
-        it 'can return newest item' do
-          Item.create(title: 'name', description: 'lalala', price: 10, image: 'url')
-          Item.create(title: 'name2', description: 'ladeela', price: 20, image: 'url')
+    end
+    context '.newest' do
+      it 'can return newest item' do
+        Item.create(title: 'name', description: 'lalala', price: 10, image: 'url')
+        Item.create(title: 'name2', description: 'ladeela', price: 20, image: 'url')
 
-          expect(Item.newest).to eq('name2')
-        end
+        expect(Item.newest).to eq('name2')
       end
-      context '.oldest' do
-        it 'can return oldest item' do
-          Item.create(title: 'name', description: 'lalala', price: 10, image: 'url')
-          Item.create(title: 'name2', description: 'ladeela', price: 20, image: 'url')
+    end
+    context '.oldest' do
+      it 'can return oldest item' do
+        Item.create(title: 'name', description: 'lalala', price: 10, image: 'url')
+        Item.create(title: 'name2', description: 'ladeela', price: 20, image: 'url')
 
-          expect(Item.oldest).to eq('name')
-        end
+        expect(Item.oldest).to eq('name')
       end
-      context '.total_price' do
-        it 'can return total price of items' do
-          Item.create(title: 'name', description: 'lalala', price: 10, image: 'url')
-          Item.create(title: 'name2', description: 'ladeela', price: 20, image: 'url')
+    end
+    context '.total_price' do
+      it 'can return total price of items' do
+        Item.create(title: 'name', description: 'lalala', price: 10, image: 'url')
+        Item.create(title: 'name2', description: 'ladeela', price: 20, image: 'url')
 
-          expect(Item.total_price).to eq(30)
-        end
+        expect(Item.total_price).to eq(30)
       end
-      context '.highest_priced_item' do
-        it 'returns the item with highest price' do
-          item1 = Item.create(title: 'name', description: 'lalala', price: 10, image: 'url')
-          item2 = Item.create(title: 'name2', description: 'ladeela', price: 20, image: 'url')
+    end
+    context '.highest_priced_item' do
+      it 'returns the item with highest price' do
+        item1 = Item.create(title: 'name', description: 'lalala', price: 10, image: 'url')
+        item2 = Item.create(title: 'name2', description: 'ladeela', price: 20, image: 'url')
 
-          expect(Item.highest_priced_item).to eq(item2)
-        end
+        expect(Item.highest_priced_item).to eq(item2)
       end
-      context '.format_price' do
-        it 'returns the price as a formatted string' do
-          item1 = Item.create(title: 'name', description: 'lalala', price: 10, image: 'url')
-          item2 = Item.create(title: 'name2', description: 'description', price: 10.99, image: 'url')
+    end
+    context '.format_price' do
+      it 'returns the price as a formatted string' do
+        item1 = Item.create(title: 'name', description: 'lalala', price: 10, image: 'url')
+        item2 = Item.create(title: 'name2', description: 'description', price: 10.99, image: 'url')
 
-          expect(item1.format_price).to eq("$10.00")
-          expect(item2.format_price).to eq("$10.99")
-        end
+        expect(item1.format_price).to eq("$10.00")
+        expect(item2.format_price).to eq("$10.99")
       end
+    end
   end
 end
