@@ -12,7 +12,7 @@ RSpec.describe 'User' do
       click_button 'Create'
 
       expect(page).to have_content('Adam')
-      expect(page).to have_content(55.55)
+      expect(page).to have_content('$55.55')
       expect(current_path).to eq('/items')
       expect(Item.count).to eq(1)
       expect(Item.find(1).merchant_id).to eq(merchant2.id)

@@ -24,7 +24,16 @@
   </header>
 
   <section class="background">
-    <a class="link_to_show" href="../merchants/<%= @invoice.merchant_id %>"><%=Merchant.find(@invoice.merchant_id).name%></a>
+    <a class="link_to_show" href="../merchants/<%= @invoice.merchant_id %>"><%=Merchant.find(@invoice.merchant_id).name%></a></br>
+      <section class="merchants_list">
+      <% @invoice.items.each do |item| %>
+        <section class="display">
+        <a href = "/items/<%=item.id%>"> <%= item.id %> </a>
+        <%= item.title %>
+        <%= item.format_price %></br>
+        </section>
+      <% end %>
+      </section>
   </section>
 
   <section class="all_cards">
@@ -40,5 +49,4 @@
     </section>
     <% end %>
   </section>
-
   </body>

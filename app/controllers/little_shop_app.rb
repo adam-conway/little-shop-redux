@@ -1,6 +1,11 @@
 class LittleShopApp < Sinatra::Base
   set :method_override, true
   set :public_folder, 'public'
+
+    get '/' do
+      erb :'index'
+    end
+
     get '/merchants' do
       @merchants = Merchant.all
       erb :'merchants/index'
