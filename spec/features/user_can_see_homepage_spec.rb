@@ -1,4 +1,4 @@
-RSpec.describe 'User' do
+atRSpec.describe 'User' do
   describe 'visits an homepage' do
     it 'can see homepage content' do
       visit "/"

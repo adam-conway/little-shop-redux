@@ -69,6 +69,11 @@ body {
   background-color: #05A8AA;
 }
 
+.card img {
+  height: 300px;
+  width: 300px;
+}
+
 .buttons{
   display: flex;
 }
@@ -82,7 +87,7 @@ a:hover {
 }
 
 a:visited {
-  color: #E39774;
+  color: #77356F;
 }
 
 input[type=submit] {
