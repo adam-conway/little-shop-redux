@@ -7,7 +7,6 @@
     <title> <%= @item.title %></title>
   </head>
   <body>
-
     <%= erb :'partials/navigation' %>
 
     <header class='header'>
@@ -25,11 +24,23 @@
         </div>
     </header>
 
-    Add line to link to merchant once connection is built.
-
-    <h1><%= @item.description %></h1>
-    <h1><%= @item.price %></h1>
-    <h1><%= @item.image %></h1>
+    <section class="all_cards">
+      <section class="card">
+        <h1> <a class="link_to_show" href="../merchants/<%= @item.merchant_id %>"><%=Merchant.find(@item.merchant_id).name%></a></h1></br>
+        <img src="<%= @item.image %>">
+      </section>
+      <section class="card">
+        <div>
+        <h1> <%= @item.title %> </h1></br>
+      </div>
+      <div>
+        <p><%= @item.format_price %></p></br>
+      </div>
+        <div>
+        <p><%= @item.description %></p></br>
+      </div>
+      </section>
+    </section>
 
   </body>
 </html>

@@ -67,6 +67,12 @@ body {
   margin: 25px;
   padding: 12px;
   background-color: #05A8AA;
+  font-family: Helvetica;
+  color: #FFFFFF;
+}
+
+.card h1 {
+  font-size: 25px;
 }
 
 .card img {
