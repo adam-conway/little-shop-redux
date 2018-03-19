@@ -21,7 +21,7 @@
         <section class="card">
             <img src="<%= item.image %>"><br>
             <a class="link_to_show" href="items/<%= item.id %>"><%= item.title %></a>
-            <%= item.price %>
+            <%= item.format_price %>
           <form action="/items/<%= item.id %>" method="POST">
             <input type="hidden" name="_method" value="DELETE">
             <input type="submit" value="delete"/>

@@ -13,7 +13,7 @@ class Seed
     Item.create(id: row[:id],
                 title: row[:name],
                 description: row[:description],
-                price: row[:unit_price],
+                price: row[:unit_price].to_i / 100.0,
                 image: "https://avatars0.githubusercontent.com/u/7598370?s=400&v=4",
                 merchant_id: row[:merchant_id]
                 )
@@ -29,7 +29,7 @@ class Seed
     InvoiceItem.create(item_id: row[:item_id],
                        invoice_id: row[:invoice_id],
                        quantity: row[:quantity],
-                       unit_price: row[:unit_price]
+                       unit_price: (row[:unit_price].to_i / 100.0).round(2)
                       )
   end
 end
