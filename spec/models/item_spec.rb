@@ -97,5 +97,14 @@ RSpec.describe Item do
         expect(Item.highest_priced_item).to eq(item2)
       end
     end
+    context '.format_price' do
+      it 'returns the price as a formatted string' do
+        item1 = Item.create(title: 'name', description: 'lalala', price: 10, image: 'url')
+        item2 = Item.create(title: 'name2', description: 'description', price: 10.99, image: 'url')
+
+        expect(item1.format_price).to eq("$10.00")
+        expect(item2.format_price).to eq("$10.99")
+      end
+    end
   end
 end

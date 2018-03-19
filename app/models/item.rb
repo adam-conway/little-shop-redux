@@ -32,4 +32,15 @@ class Item < ActiveRecord::Base
     price = maximum(:price)
     find_by(price: price)
   end
+
+  def format_price
+    cents = self.price.to_s.split('.').last
+    if cents.length == 0
+      "$#{self.price}.00"
+    elsif cents.length == 1
+      "$#{self.price}0"
+    else
+      "$#{self.price}"
+    end
+  end
 end
