@@ -13,18 +13,19 @@
   </header>
 
   <section class='entry_form'>
-    <a class="link_to_show" href="../merchants/<%= @invoice.merchant_id %>"><%=Merchant.find(@invoice.merchant_id).name%></a></br>
     <form action="/invoices/<%= @invoice.id %>" method='POST'>
       <input type='hidden' name="_method" value='PUT' />
+      Invoice Status:
         <select name="invoice[status]" id="statuses">
           <option value="Pending">Pending</option>
           <option value="Shipped">Shipped</option>
           <option value="Returned">Returned</option>
-        </select>
+        </select></br>
+        Invoice ID:
       <input type='text' name="invoice[merchant_id]" value="<%= @invoice.merchant_id %>"/><br/>
       <input type='submit', value='Edit'/>
+      <a href="#" onclick="history.go(-1)">Cancel</a>
     </form>
-    <a href="#" onclick="history.go(-1)">Cancel</a>
   </section>
 
   <section class="merchants_list">

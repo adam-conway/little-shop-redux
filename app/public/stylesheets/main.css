@@ -111,6 +111,7 @@ input[type=submit] {
 input[type=submit]:hover {
   background-color: #e3e3e3;
   border-color: rgba(0,0,0,0.5);
+  cursor: pointer;
 }
 
 a.create_button {
@@ -160,7 +161,7 @@ a.create_button:active {
 .entry_form {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-end;
   width: 500px;
   height: 300px;
@@ -175,8 +176,6 @@ a.create_button:active {
 }
 
 .entry_form a {
-  display: flex;
-  align-self: center;
   display: inline-block;
 	color: #666;
 	background-color: #eee;
@@ -186,9 +185,11 @@ a.create_button:active {
 	padding: 10px 30px;
 	border-radius: 5px;
 	border: 1px solid rgba(0,0,0,0.3);
+  font-family: Helvetica;
+  text-decoration: none;
 }
 
-.entry_form.submit_buttons a:hover {
+.entry_form a:hover {
   background-color: #e3e3e3;
   border-color: rgba(0,0,0,0.5);
 }
