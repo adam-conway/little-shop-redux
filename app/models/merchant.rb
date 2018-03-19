@@ -2,6 +2,7 @@ class Merchant < ActiveRecord::Base
   validates :name, presence: true
 
   has_many :items
+  has_many :invoices
 
   def self.most_items
     self.all.max_by do |merchant|
