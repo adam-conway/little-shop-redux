@@ -31,7 +31,7 @@ RSpec.describe 'User' do
       Item.create(title: 'Sal', description: 'kewl', price: 30, image: 'url', merchant_id: 2)
 
       visit '/merchants-dashboard'
-
+      
       expect(page).to have_content('Total Cost of Items: 30')
 
     end

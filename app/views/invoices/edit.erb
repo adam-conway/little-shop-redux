@@ -12,27 +12,29 @@
     <h1 id='header_title'>Edit an Invoice</h1></br>
   </header>
 
-  <section class="background">
-  <form action="/invoices/<%= @invoice.id %>" method='POST'>
-    <input type='hidden' name="_method" value='PUT' />
+  <section class='entry_form'>
+    <a class="link_to_show" href="../merchants/<%= @invoice.merchant_id %>"><%=Merchant.find(@invoice.merchant_id).name%></a></br>
+    <form action="/invoices/<%= @invoice.id %>" method='POST'>
+      <input type='hidden' name="_method" value='PUT' />
         <select name="invoice[status]" id="statuses">
           <option value="Pending">Pending</option>
           <option value="Shipped">Shipped</option>
           <option value="Returned">Returned</option>
         </select>
-    <input type='text' name="invoice[merchant_id]" value="<%= @invoice.merchant_id %>"/><br/>
-    <input type='submit', value='Edit'/>
-  </form>
-  <a href="#" onclick="history.go(-1)">Cancel</a>
-    <a class="link_to_show" href="../merchants/<%= @invoice.merchant_id %>"><%=Merchant.find(@invoice.merchant_id).name%></a></br>
-    <section class="merchants_list">
-    <% @invoice.items.each do |item| %>
-    <section class="display">
-    <a href = "/items/<%=item.id%>"> <%= item.id %> </a>
-    <%= item.title %>
-    <%= item.format_price %></br>
+      <input type='text' name="invoice[merchant_id]" value="<%= @invoice.merchant_id %>"/><br/>
+      <input type='submit', value='Edit'/>
+    </form>
+    <a href="#" onclick="history.go(-1)">Cancel</a>
   </section>
+
+  <section class="merchants_list">
+    <% @invoice.items.each do |item| %>
+      <section class="display">
+        <a href = "/items/<%=item.id%>"> <%= item.id %> </a>
+        <%= item.title %>
+        <%= item.format_price %></br>
+      </section>
     <% end %>
   </section>
-  </body>
+</body>
 </html>

@@ -10,6 +10,10 @@
   padding-right: 10px;
 }
 
+body {
+  background-color: #DDFFF7
+}
+
 .header {
   align-items: center;
   padding-bottom: 10px;
@@ -60,8 +64,9 @@
   display: flex;
   width: 300px;
   flex-direction: column;
-  padding: 25px;
-
+  margin: 25px;
+  padding: 12px;
+  background-color: #05A8AA;
 }
 
 .buttons{
@@ -141,13 +146,45 @@ a.create_button:active {
   padding-left: 10px;
 }
 
-form {
-  align-items: center;
-  padding-top: 10px;
+.entry_form {
   display: flex;
   flex-direction: column;
-  width: 75%;
   justify-content: space-between;
+  align-items: flex-end;
+  width: 500px;
+  height: 300px;
+  margin: 50px auto;
+  background-color: #05A8AA;
+}
+
+.entry_form form {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+}
+
+.entry_form a {
+  display: flex;
+  align-self: center;
+  display: inline-block;
+	color: #666;
+	background-color: #eee;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 12px;
+	padding: 10px 30px;
+	border-radius: 5px;
+	border: 1px solid rgba(0,0,0,0.3);
+}
+
+.entry_form.submit_buttons a:hover {
+  background-color: #e3e3e3;
+  border-color: rgba(0,0,0,0.5);
+}
+
+form {
+  display: flex;
+  /* align-self: flex-end; */
 }
 
 .little_shop {
