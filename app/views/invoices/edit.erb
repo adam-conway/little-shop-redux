@@ -24,7 +24,9 @@
         Invoice ID:
       <input type='text' name="invoice[merchant_id]" value="<%= @invoice.merchant_id %>"/><br/>
       <input type='submit', value='Edit'/>
-      <a href="#" onclick="history.go(-1)">Cancel</a>
+    </form>
+    <form action="/invoices/<%= @invoice.id %>" method="GET">
+      <input type="submit" value="cancel"/>
     </form>
   </section>
 
