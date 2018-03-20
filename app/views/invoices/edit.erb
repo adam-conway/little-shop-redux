@@ -34,6 +34,7 @@
         <a href = "/items/<%=item.id%>"> <%= item.id %> </a>
         <%= item.title %>
         <%= item.format_price %></br>
+        <%= item.quantity(@invoice) %></br>
       </section>
     <% end %>
   </section>
