@@ -16,7 +16,7 @@ class Seed
     Item.create(id: row[:id],
                 title: row[:name],
                 description: row[:description],
-                price: row[:unit_price].to_i,
+                price: row[:unit_price].to_i / 100.0,
                 image: images[rand(2)],
                 merchant_id: row[:merchant_id]
                 )
