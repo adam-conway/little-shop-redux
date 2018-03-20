@@ -33,7 +33,15 @@ class Item < ActiveRecord::Base
   end
 
   def self.total_price
-    sum(:price).round(2)
+    total = sum(:price).round(2)
+    cents = total.to_s.split('.').last
+    if cents.length == 0
+      "$#{total}.00"
+    elsif cents.length == 1
+      "$#{total}0"
+    else
+      "$#{total}"
+    end
   end
 
   def self.highest_priced_item

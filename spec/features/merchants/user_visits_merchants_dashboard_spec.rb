@@ -32,7 +32,7 @@ RSpec.describe 'User' do
 
       visit '/merchants-dashboard'
 
-      expect(page).to have_content('Total Cost of Items: 30')
+      expect(page).to have_content('Total Cost of Items: $30.00')
 
     end
     it 'can see the merchant with the most items and that merchants information' do
