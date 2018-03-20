@@ -71,6 +71,10 @@ body {
   color: #FFFFFF;
 }
 
+.dashboard h1 {
+  font-size: 35px;
+}
+
 .card h1 {
   font-size: 25px;
 }
@@ -196,7 +200,6 @@ a.create_button:active {
 
 form {
   display: flex;
-  /* align-self: flex-end; */
 }
 
 .little_shop {
