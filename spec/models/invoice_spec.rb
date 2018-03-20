@@ -88,7 +88,7 @@ RSpec.describe Invoice do
         invoice_item2 = InvoiceItem.create(item_id: 1, invoice_id: 1, quantity: 15, unit_price: 80)
         invoice_item3 = InvoiceItem.create(item_id: 1, invoice_id: 2, quantity: 20, unit_price: 163)
 
-        expect(Invoice.lowest_unit_price).to eq(invoice1.id)
+        expect(Invoice.lowest_unit_price).to eq(invoice2.id)
       end
     end
 
