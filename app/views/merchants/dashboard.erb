@@ -16,11 +16,11 @@
       <section class="all_cards">
       <div class="card">
         <h1> Merchant With Most Items: </h1></br>
-        <%= @merchants.most_items.name %></br>
+        <a href="/merchants/<%= @merchants.most_items.id %>"><%= @merchants.most_items.name %></a></br>
       </div>
       <div class="card">
         <h1> Merchant With Highest Priced Items: </h1></br>
-        <%= @merchants.highest_priced_item %></br>
+        <a href="/merchants/<%= @merchants.highest_priced_item.id %>"><%= @merchants.highest_priced_item.name %></a></br>
       </div>
     </section>
 

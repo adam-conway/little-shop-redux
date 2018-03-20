@@ -20,9 +20,9 @@ RSpec.describe 'User' do
       item3 = Item.create(title: 'Sal', description: 'kewl', price: 20, image: 'url', merchant_id: 2)
 
       visit '/merchants-dashboard'
-      click_on "#{merchant1.name}"
+      click_on "#{merchant2.name}"
 
-      expect(current_path).to eq("/merchants/#{merchant1.id}")
+      expect(current_path).to eq("/merchants/#{merchant2.id}")
     end
     it 'can see average price of item for each merchant' do
       merchant1 = Merchant.create(name: 'Margaret')
