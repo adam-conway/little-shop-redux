@@ -28,5 +28,28 @@ RSpec.describe 'User' do
       expect(page).to have_content(item.title)
       expect(page).to have_content(item.format_price)
     end
+    it 'can link to edit page' do
+      merchant = Merchant.create(name: 'Margaret')
+      invoice = Invoice.create(status: 'pending', merchant_id: merchant.id)
+      item = Item.create(title: 'Ali', description: 'tEaChEr', price: 2, image: 'google.com', merchant_id: merchant.id)
+      InvoiceItem.create(invoice_id: invoice.id, item_id: item.id)
+
+      visit '/invoices/1'
+      click_on 'edit'
+
+      expect(current_path).to eq('/invoices/1/edit')
+    end
+    it 'can delete invoice' do
+      merchant = Merchant.create(name: 'Margaret')
+      invoice = Invoice.create(status: 'pending', merchant_id: merchant.id)
+      item = Item.create(title: 'Ali', description: 'tEaChEr', price: 2, image: 'google.com', merchant_id: merchant.id)
+      InvoiceItem.create(invoice_id: invoice.id, item_id: item.id)
+
+      visit '/invoices/1'
+      click_on 'delete'
+
+      expect(current_path).to eq('/invoices')
+      expect(page).to_not have_content('1')
+    end
   end
 end
