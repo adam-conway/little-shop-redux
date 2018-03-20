@@ -15,5 +15,11 @@ RSpec.describe 'User' do
 
       expect(current_path).to eq('/merchants')
     end
+    it 'returns to merchants page if the form is left blank' do
+      visit '/merchants/new'
+      click_button 'Create'
+
+      expect(current_path).to eq('/merchants')
+    end
   end
 end

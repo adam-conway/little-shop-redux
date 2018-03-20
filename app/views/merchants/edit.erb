@@ -23,7 +23,9 @@
       </form>
 
       <a href="#" name= "Cancel" onclick="history.go(-1)">Cancel</a>
-
+      <form action="/merchants/<%= @merchant.id %>" method="GET">
+        <input type="submit" value="cancel"/>
+      </form>
     </section>
 
   </body>
