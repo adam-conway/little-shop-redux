@@ -25,9 +25,9 @@
     <div class="card">
       <div class="dashboard">
         <h1><a href="/merchants/<%= merchant.id %>"> <%= merchant.name %>: </a></h1></br>
-        <h2> Item Count: </br></h2> <%= merchant.items.count %></br>
-        <h2> Average Item Price: </br></h2><%= merchant.items.average_price %></br>
-        <h2>Total Cost of Items: </br></h2><%= merchant.items.total_price %></br>
+        Item Count: </br> <%= merchant.items.count %></br></br>
+        Average Item Price: </br><%= merchant.items.average_price %></br></br>
+        Total Cost of Items: </br><%= merchant.items.total_price %></br>
       </div>
     </div>
     <% end  %>

@@ -13,7 +13,15 @@ class Item < ActiveRecord::Base
   end
 
   def self.average_price
-    average(:price).round(2)
+    avg = average(:price).round(2)
+    cents = avg.to_s.split('.').last
+    if cents.length == 0
+      "$#{avg}.00"
+    elsif cents.length == 1
+      "$#{avg}0"
+    else
+      "$#{avg}"
+    end
   end
 
   def self.newest

@@ -73,6 +73,7 @@ body {
 
 .dashboard h1 {
   font-size: 35px;
+  text-decoration: underline;
 }
 
 .card h1 {

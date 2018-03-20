@@ -62,7 +62,7 @@ RSpec.describe Item do
         Item.create(title: 'name', description: 'lalala', price: 10, image: 'url')
         Item.create(title: 'name2', description: 'ladeela', price: 20, image: 'url')
 
-        expect(Item.average_price).to eq(15)
+        expect(Item.average_price).to eq("$15.00")
       end
     end
     context '.newest' do
