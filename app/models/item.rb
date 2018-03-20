@@ -29,7 +29,7 @@ class Item < ActiveRecord::Base
   end
 
   def self.oldest
-    order(:created_at).first.title
+    order(:created_at).first
   end
 
   def self.total_price

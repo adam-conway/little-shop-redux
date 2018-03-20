@@ -25,7 +25,7 @@
       <section class='dashboard'>
         <h2>Item by Age:</br></h2></br>
         <h4>Newest Item</br></h4></br><a href="/items/<%= @items.newest.id %>"> <%= @items.newest.title %></a></br></br>
-        <h4>Oldest Item</br></h4></br><%= @items.oldest %>
+        <h4>Oldest Item</br></h4></br><a href="/items/<%= @items.oldest.id %>"><%= @items.oldest.title %></a>
       </section>
     </section>
   </body>

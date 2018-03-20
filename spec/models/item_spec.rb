@@ -78,7 +78,7 @@ RSpec.describe Item do
         Item.create(title: 'name', description: 'lalala', price: 10, image: 'url')
         Item.create(title: 'name2', description: 'ladeela', price: 20, image: 'url')
 
-        expect(Item.oldest).to eq('name')
+        expect(Item.oldest.title).to eq('name')
       end
     end
     context '.total_price' do
