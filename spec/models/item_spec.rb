@@ -107,4 +107,16 @@ RSpec.describe Item do
       end
     end
   end
+
+  describe 'Instance Methods' do
+    context '.quantity' do
+      it 'returns the quantity of an item on an invoice' do
+        item = Item.create(title: 'name', description: 'lalala', price: 10, image: 'url', merchant_id: 10)
+        invoice = Invoice.create(status: 'Pending', merchant_id: 10)
+        invoice_item = InvoiceItem.create(item_id: 1, invoice_id: 1, quantity: 50, unit_price: 123)
+
+        expect(item.quantity).to eq(50)
+      end
+    end
+  end
 end

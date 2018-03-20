@@ -43,4 +43,8 @@ class Item < ActiveRecord::Base
       "$#{self.price}"
     end
   end
+
+  def quantity(invoice)
+    self.invoice_items.find_by(invoice_id: invoice.id).quantity
+  end
 end
