@@ -14,17 +14,18 @@
     </header>
 
     <section class="all_cards">
-      <section class='card'>
-        Total Item Count</br>
-        <%= @items.total_count %>
-      </section>
-      <section class='card'>
-        Average Price Per Item</br>
-        <%= @items.average_price %>
-      </section>
-      <section class='card'>
-        Newest Item: <%= @items.newest %></br>
-        Oldest Item: <%= @items.oldest %>
+      <div class='dashboard'>
+        <h2>Total Item Count:</br></h2></br>
+        <p><%= @items.total_count %></p>
+      </div>
+      <div class='dashboard'>
+        <h2>Average Price Per Item:</br></h2></br>
+        <p><%= @items.average_price %></p>
+      </div>
+      <section class='dashboard'>
+        <h2>Item by Age:</br></h2></br>
+        <h4>Newest Item</br></h4></br><a href="/items/<%= @items.newest.id %>"> <%= @items.newest.title %></a></br></br>
+        <h4>Oldest Item</br></h4></br><a href="/items/<%= @items.oldest.id %>"><%= @items.oldest.title %></a>
       </section>
     </section>
   </body>

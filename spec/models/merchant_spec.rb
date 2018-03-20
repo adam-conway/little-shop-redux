@@ -35,7 +35,7 @@ RSpec.describe Merchant do
         item2 = Item.create(title: 'Ian', description: 'canadian', price: 20, image: 'url', merchant_id: 1)
         item3 = Item.create(title: 'Sal', description: 'kewl', price: 30, image: 'url', merchant_id: 2)
 
-        expect(Merchant.highest_priced_item).to eq(merchant2.name)
+        expect(Merchant.highest_priced_item.name).to eq(merchant2.name)
       end
     end
   end
