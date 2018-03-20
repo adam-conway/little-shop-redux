@@ -30,7 +30,7 @@ RSpec.describe 'User' do
 
     visit '/invoices-dashboard'
 
-    expect(page).to have_content('Highest quantity: 4')
-    expect(page).to have_content('Lowest quantity: 1')
+    expect(page).to have_content('Highest Quantity: 4')
+    expect(page).to have_content('Lowest Quantity: 1')
   end
 end

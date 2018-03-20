@@ -11,7 +11,9 @@
 }
 
 body {
-  background-color: #DDFFF7
+  background-color: #DDFFF7;
+  font-family: 'Helvetica';
+  color: #FFFFFF;
 }
 
 .header {
@@ -74,7 +76,7 @@ body {
   margin: 25px;
   padding: 12px;
   background-color: #05A8AA;
-  font-family: Helvetica;
+  font-family: "Helvetica";
   color: #FFFFFF;
 }
 
@@ -85,7 +87,7 @@ body {
   margin: 25px;
   padding: 12px;
   background-color: #2F323A;
-  font-family: Helvetica;
+  font-family: "Helvetica";
   color: #FFFFFF;
   justify-content: space-around;
 }
@@ -213,12 +215,14 @@ a.create_button:active {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
-  width: 500px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   margin: 50px auto;
   background-color: #05A8AA;
+  font-size: 24px;
+  font-family: "Helvetica";
 }
+
 
 .entry_form form {
   display: flex;
@@ -236,7 +240,7 @@ a.create_button:active {
 	padding: 10px 30px;
 	border-radius: 5px;
 	border: 1px solid rgba(0,0,0,0.3);
-  font-family: Helvetica;
+  font-family: "Helvetica";
   text-decoration: none;
 }
 
