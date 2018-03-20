@@ -17,5 +17,13 @@ RSpec.describe 'User' do
       expect(Item.count).to eq(1)
       expect(Item.find(1).merchant_id).to eq(merchant2.id)
     end
+    it 'can cancel' do
+      merchant = Merchant.create(name: 'v cool merchant')
+      merchant2 = Merchant.create(name: 'another awesome merchant')
+      visit '/items/new'
+      click_button 'Cancel'
+
+      expect(current_path).to eq('/items')
+    end
   end
 end

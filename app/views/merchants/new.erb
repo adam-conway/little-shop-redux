@@ -14,17 +14,19 @@
       <p id='header_title'>Create New Merchant</p>
     </header>
 
-    <section class='entry_form'>
-      <form action='/merchants' method='POST'>
-        Name: </br></br>
-        <input type='text' name="merchant[name]" placeholder='Enter merchant name'/><br/>
-        <div>
-        <input type='submit', value='Create'/>
-      </form>
-      <form action='/merchants' method='GET'>
-        <input type='submit', value='Cancel'/>
-      </form>
-    </div>
+    <section class="merchant_form">
+      <section class='entry_form'>
+        <form action='/merchants' method='POST'>
+          Name: </br></br>
+          <input type='text' name="merchant[name]" placeholder='Enter merchant name'/><br/>
+          <div>
+          <input type='submit', value='Create'/>
+        </form>
+        <form action='/merchants' method='GET'>
+          <input type='submit', value='Cancel'/>
+        </form>
+      </div>
+      </section>
     </section>
   </body>
 </html>

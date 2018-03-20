@@ -211,7 +211,7 @@ a.create_button:active {
   padding-left: 10px;
 }
 
-.entry_form {
+.merchant_form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -223,6 +223,23 @@ a.create_button:active {
   font-family: "Helvetica";
 }
 
+.item_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 250px;
+  height: 450px;
+  margin: 50px auto;
+  background-color: #05A8AA;
+  font-size: 24px;
+  font-family: "Helvetica";
+}
+
+.entry_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .entry_form form {
   display: flex;
@@ -247,6 +264,10 @@ a.create_button:active {
 .entry_form a:hover {
   background-color: #e3e3e3;
   border-color: rgba(0,0,0,0.5);
+}
+
+.entry_form select {
+  font-family: "Helvetica";
 }
 
 form {
