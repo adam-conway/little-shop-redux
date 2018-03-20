@@ -116,6 +116,9 @@ body {
   justify-content: center;
 }
 
+.card h1 {
+  font-size: 26px;
+}
 .card h2{
   font-size: 24px;
 }
@@ -215,8 +218,8 @@ a.create_button:active {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 200px;
-  height: 200px;
+  width: 275px;
+  height: 225px;
   margin: 50px auto;
   background-color: #05A8AA;
   font-size: 24px;

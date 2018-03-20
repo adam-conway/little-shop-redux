@@ -11,21 +11,21 @@
     <%= erb :'partials/navigation' %>
 
     <header class='header'>
-      <p id='header_title'>Edit A Merchant</p>
+      <p id='header_title'>Edit Merchant Name</p>
     </header>
+    <section class="merchant_form">
+      <section class='entry_form'>
+        <form action="/merchants/<%= @merchant.id %>" method='POST'>
+          <input type='hidden' name="_method" value='PUT' />
+          Name:
+          <input type='text' name="merchant[name]" value="<%= @merchant.name %>"/></br>
+          <input type='submit', value='Update Merchant'/>
+        </form>
 
-    <section class='entry_form'>
-      <form action="/merchants/<%= @merchant.id %>" method='POST'>
-        <input type='hidden' name="_method" value='PUT' />
-        Name:
-        <input type='text' name="merchant[name]" value="<%= @merchant.name %>"/></br>
-        <input type='submit', value='Update Merchant'/>
-      </form>
-
-      <form action="/merchants/<%= @merchant.id %>" method="GET">
-        <input type="submit" value="cancel"/>
-      </form>
+        <form action="/merchants/<%= @merchant.id %>" method="GET">
+          <input type="submit" value="cancel"/>
+        </form>
+      </section>
     </section>
-
   </body>
 </html>

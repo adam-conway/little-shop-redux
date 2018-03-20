@@ -13,21 +13,28 @@
     <header class='header'>
       <p id='header_title'>Edit An Item</p>
     </header>
-
-    <section class='entry_form'>
-      <form action="/items/<%= @item.id %>" method='POST'>
-        <input type='hidden' name="_method" value='PUT' />
-        Title:
-        <input type='text' name="item[title]" value="<%= @item.title %>"/><br/>
-        Description:
-        <input type='text' name="item[description]" value="<%= @item.description %>"/><br/>
-        Price:
-        <input type='text' name="item[price]" value="<%= @item.price %>"/><br/>
-        Image URL:
-        <input type='text' name="item[image]" value="<%= @item.image %>"/><br/>
-        <input type='submit', value='Edit'/>
-      </form>
-      <a href="#" onclick="history.go(-1)">Cancel</a>
+    <section class="item_form">
+      <section class='entry_form'>
+        <form action="/items/<%= @item.id %>" method='POST'>
+          <input type='hidden' name="_method" value='PUT' />
+          Merchant:
+          <select name="item[merchant_id]" id='merchants'>
+              <option value ="<%= @item.merchant.id %>"> <%= @item.merchant.name %></option>
+          </select></br>
+          Title:
+          <input type='text' name="item[title]" value="<%= @item.title %>"/><br/>
+          Description:
+          <input type='text' name="item[description]" value="<%= @item.description %>"/><br/>
+          Price:
+          <input type='text' name="item[price]" value="<%= @item.price %>"><br/>
+          Image Link:
+          <input type='text' name="item[image]" value="<%= @item.image %>"/><br/>
+          <input type='submit', value='Edit'/>
+        </form>
+        <form action="/items/<%= @item.id %>" method="GET">
+          <input type="submit" value="cancel"/>
+        </form>
+      </section>
     </section>
   </body>
 </html>
