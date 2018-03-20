@@ -22,8 +22,8 @@ RSpec.describe 'User' do
 
       visit '/items-dashboard'
 
-      expect(page).to have_content('Newest Item: a')
-      expect(page).to have_content('Oldest Item: ABC')
+      expect(page).to have_content('Newest Item a')
+      expect(page).to have_content('ABC')
     end
   end
 end

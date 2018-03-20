@@ -14,25 +14,25 @@
     </header>
     <section class="background">
       <section class="all_cards">
-      <div class="card">
-        <h1> Merchant With Most Items: </h1></br>
-        <a href="/merchants/<%= @merchants.most_items.id %>"><%= @merchants.most_items.name %></a></br>
+      <div class="dashboard">
+        <h2> Merchant With Most Items:</h2></br>
+        <h3> <a href="/merchants/<%= @merchants.most_items.id %>"><%= @merchants.most_items.name %></a></br></h3>
       </div>
-      <div class="card">
-        <h1> Merchant With Highest Priced Items: </h1></br>
-        <a href="/merchants/<%= @merchants.highest_priced_item.id %>"><%= @merchants.highest_priced_item.name %></a></br>
+      <div class="dashboard">
+        <h2> Merchant With Highest Priced Items:</h2></br>
+        <h3><a href="/merchants/<%= @merchants.highest_priced_item.id %>"><%= @merchants.highest_priced_item.name %></a></br></h3>
       </div>
     </section>
 
       <section class="all_cards">
     <% @merchants.each do |merchant|%>
     <div class="card">
-      <h1><a href="/merchants/<%= merchant.id %>"> <%= merchant.name %>: </a></h1></br>
-      Item Count: </br>
+      <h2><a href="/merchants/<%= merchant.id %>"> <%= merchant.name %>: </a></h2></br>
+      <h3>Item Count:</br></h3>
       <%= merchant.items.count %></br></br>
-      Average Item Price: </br>
+      <h3>Average Item Price:</br></h3>
       <%= merchant.items.average_price %></br></br>
-      Total Cost of Items: </br>
+      <h3>Total Cost of Items:</br></h3>
       <%= merchant.items.total_price %></br>
     </div>
     <% end  %>

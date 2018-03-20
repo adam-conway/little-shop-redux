@@ -25,7 +25,7 @@ class Item < ActiveRecord::Base
   end
 
   def self.newest
-    order(:created_at).last.title
+    order(:created_at).last
   end
 
   def self.oldest
