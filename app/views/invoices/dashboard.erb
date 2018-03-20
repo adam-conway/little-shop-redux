@@ -15,20 +15,24 @@
 
     <section class="all_cards">
       <section class='dashboard'>
-        <h2>Status Percentages</br></h2>
-        Pending: <%= @invoices.pending_percentage %></br>
-        Shipped: <%= @invoices.shipped_percentage %></br>
-        Returned: <%= @invoices.returned_percentage %></br>
+        <h2>Status Percentages</br></h2></br>
+        <h3>Pending: <%= @invoices.pending_percentage.round(2) %>%</br></h3>
+        <h3>Shipped: <%= @invoices.shipped_percentage.round(2) %>%</br></h3>
+        <h3>Returned: <%= @invoices.returned_percentage.round(2) %>%</br></h3>
       </section>
       <section class='dashboard'>
-        <h2>Unit Prices</br></h2>
-        Highest Unit Price: <a href = "../invoices/<%= @invoices.highest_unit_price %>"><%= @invoices.highest_unit_price %></a></br>
-        Lowest Unit Price: <a href = "../invoices/<%= @invoices.lowest_unit_price %>"><%= @invoices.lowest_unit_price %></a></br>
+        <h2>Unit Prices</br></h2></br>
+        <h3>Invoice with Highest Unit Price: </br></h3>
+          <h3><a href = "../invoices/<%= @invoices.highest_unit_price %>"><%= @invoices.highest_unit_price %></a></br></h3>
+        <h3>Invoice with Lowest Unit Price: </br></h3>
+        <h3><a href = "../invoices/<%= @invoices.lowest_unit_price %>"><%= @invoices.lowest_unit_price %></a></br></h3>
       </section>
       <section class='dashboard'>
-        <h2>Quantities</br></h2>
-        Highest quantity: <a href = "../invoices/<%= @invoices.highest_quantity %>"><%= @invoices.highest_quantity %></a></br>
-        Lowest quantity: <a href = "../invoices/<%= @invoices.lowest_quantity %>"><%= @invoices.lowest_quantity %></a></br>
+        <h2>Quantities</br></h2></br>
+        <h3> Invoice with Highest Quantity: </h3>
+        <h3><a href = "../invoices/<%= @invoices.highest_quantity %>"><%= @invoices.highest_quantity %></a></br></h3>
+        <h3>Invoice with Lowest Quantity: </h3>
+        <h3><a href = "../invoices/<%= @invoices.lowest_quantity %>"><%= @invoices.lowest_quantity %></a></br></h3>
       </section>
     </section>
   </body>
