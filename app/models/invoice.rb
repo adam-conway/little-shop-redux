@@ -19,22 +19,22 @@ class Invoice < ActiveRecord::Base
   end
 
   def self.highest_unit_price
-    max_unit_price = InvoiceItem.maximum(:unit_price)
-    InvoiceItem.all.find_by(unit_price: max_unit_price).invoice_id
+    InvoiceItem.all.select('invoice_id, sum(unit_price)')
+               .group('invoice_id').order('sum DESC').limit(1).first.invoice_id
   end
 
   def self.lowest_unit_price
-    min_unit_price = InvoiceItem.minimum(:unit_price)
-    InvoiceItem.all.find_by(unit_price: min_unit_price).invoice_id
+    InvoiceItem.all.select('invoice_id, sum(unit_price)')
+               .group('invoice_id').order('sum').limit(1).first.invoice_id
   end
 
   def self.highest_quantity
-    max_quantity = InvoiceItem.maximum(:quantity)
-    InvoiceItem.all.find_by(quantity: max_quantity).invoice_id
+    InvoiceItem.all.select('invoice_id, sum(quantity)')
+               .group('invoice_id').order('sum DESC').limit(1).first.invoice_id
   end
 
   def self.lowest_quantity
-    min_quantity = InvoiceItem.minimum(:quantity)
-    InvoiceItem.all.find_by(quantity: min_quantity).invoice_id
+    InvoiceItem.all.select('invoice_id, sum(quantity)')
+               .group('invoice_id').order('sum').limit(1).first.invoice_id
   end
 end

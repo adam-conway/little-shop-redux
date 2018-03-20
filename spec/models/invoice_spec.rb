@@ -100,7 +100,7 @@ RSpec.describe Invoice do
         invoice_item2 = InvoiceItem.create(item_id: 1, invoice_id: 1, quantity: 15, unit_price: 15)
         invoice_item3 = InvoiceItem.create(item_id: 1, invoice_id: 2, quantity: 20, unit_price: 163)
 
-        expect(Invoice.highest_quantity).to eq(invoice2.id)
+        expect(Invoice.highest_quantity).to eq(invoice1.id)
       end
 
       it 'returns invoice with the lowest associated quantity' do
@@ -110,7 +110,7 @@ RSpec.describe Invoice do
         invoice_item2 = InvoiceItem.create(item_id: 1, invoice_id: 1, quantity: 15, unit_price: 15)
         invoice_item3 = InvoiceItem.create(item_id: 1, invoice_id: 2, quantity: 20, unit_price: 163)
 
-        expect(Invoice.lowest_quantity).to eq(invoice1.id)
+        expect(Invoice.lowest_quantity).to eq(invoice2.id)
       end
     end
   end

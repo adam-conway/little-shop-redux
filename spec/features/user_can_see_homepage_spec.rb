@@ -5,5 +5,5 @@ RSpec.describe 'User' do
 
       expect(page).to have_content("M & A's LittleShop")
     end
-end
+  end
 end
