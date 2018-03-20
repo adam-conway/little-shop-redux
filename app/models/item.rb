@@ -13,19 +13,35 @@ class Item < ActiveRecord::Base
   end
 
   def self.average_price
-    average(:price).round(2)
+    avg = average(:price).round(2)
+    cents = avg.to_s.split('.').last
+    if cents.length == 0
+      "$#{avg}.00"
+    elsif cents.length == 1
+      "$#{avg}0"
+    else
+      "$#{avg}"
+    end
   end
 
   def self.newest
-    order(:created_at).last.title
+    order(:created_at).last
   end
 
   def self.oldest
-    order(:created_at).first.title
+    order(:created_at).first
   end
 
   def self.total_price
-    sum(:price).round(2)
+    total = sum(:price).round(2)
+    cents = total.to_s.split('.').last
+    if cents.length == 0
+      "$#{total}.00"
+    elsif cents.length == 1
+      "$#{total}0"
+    else
+      "$#{total}"
+    end
   end
 
   def self.highest_priced_item

@@ -62,7 +62,7 @@ RSpec.describe Item do
         Item.create(title: 'name', description: 'lalala', price: 10, image: 'url')
         Item.create(title: 'name2', description: 'ladeela', price: 20, image: 'url')
 
-        expect(Item.average_price).to eq(15)
+        expect(Item.average_price).to eq("$15.00")
       end
     end
     context '.newest' do
@@ -70,7 +70,7 @@ RSpec.describe Item do
         Item.create(title: 'name', description: 'lalala', price: 10, image: 'url')
         Item.create(title: 'name2', description: 'ladeela', price: 20, image: 'url')
 
-        expect(Item.newest).to eq('name2')
+        expect(Item.newest.title).to eq('name2')
       end
     end
     context '.oldest' do
@@ -78,7 +78,7 @@ RSpec.describe Item do
         Item.create(title: 'name', description: 'lalala', price: 10, image: 'url')
         Item.create(title: 'name2', description: 'ladeela', price: 20, image: 'url')
 
-        expect(Item.oldest).to eq('name')
+        expect(Item.oldest.title).to eq('name')
       end
     end
     context '.total_price' do
@@ -86,7 +86,7 @@ RSpec.describe Item do
         Item.create(title: 'name', description: 'lalala', price: 10, image: 'url')
         Item.create(title: 'name2', description: 'ladeela', price: 20, image: 'url')
 
-        expect(Item.total_price).to eq(30)
+        expect(Item.total_price).to eq("$30.00")
       end
     end
     context '.highest_priced_item' do
