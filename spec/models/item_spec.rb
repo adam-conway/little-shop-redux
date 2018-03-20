@@ -115,7 +115,7 @@ RSpec.describe Item do
         invoice = Invoice.create(status: 'Pending', merchant_id: 10)
         invoice_item = InvoiceItem.create(item_id: 1, invoice_id: 1, quantity: 50, unit_price: 123)
 
-        expect(item.quantity).to eq(50)
+        expect(item.quantity(invoice)).to eq(50)
       end
     end
   end
