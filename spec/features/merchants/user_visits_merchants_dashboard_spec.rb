@@ -12,6 +12,18 @@ RSpec.describe 'User' do
       expect(page).to have_content(merchant1.name)
       expect(page).to have_content('Item Count: 2')
     end
+    it 'can go to individual merchant' do
+      merchant1 = Merchant.create(name: 'Margaret')
+      merchant2 = Merchant.create(name: 'Adam')
+      item1 = Item.create(title: 'Ali', description: 'da bomb', price: 10, image: 'url', merchant_id: 1)
+      item2 = Item.create(title: 'Ian', description: 'canadian', price: 20, image: 'url', merchant_id: 1)
+      item3 = Item.create(title: 'Sal', description: 'kewl', price: 20, image: 'url', merchant_id: 2)
+
+      visit '/merchants-dashboard'
+      click_on "#{merchant1.name}"
+
+      expect(current_path).to eq("/merchants/#{merchant1.id}")
+    end
     it 'can see average price of item for each merchant' do
       merchant1 = Merchant.create(name: 'Margaret')
       merchant2 = Merchant.create(name: 'Adam')

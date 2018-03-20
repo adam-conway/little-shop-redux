@@ -71,15 +71,6 @@ body {
   color: #FFFFFF;
 }
 
-.dashboard h1 {
-  font-size: 35px;
-  text-decoration: underline;
-}
-
-.card h1 {
-  font-size: 25px;
-}
-
 .card img {
   height: 300px;
   width: 300px;
