@@ -1,7 +1,8 @@
 RSpec.describe 'User' do
   describe 'visits an edit item page' do
     it 'can edit an item' do
-      item_1 = Item.create(title: 'Adam', description: 'so cool', price: 575.04, image: 'url')
+      item_1 = Item.create(title: 'Adam', description: 'so cool', price: 575.04, merchant_id: 1, image: 'url')
+      Merchant.create(name: 'adam')
 
       visit "/items/#{item_1.id}/edit"
       fill_in 'item[title]', with: 'Margaret'

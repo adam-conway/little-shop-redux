@@ -20,21 +20,37 @@ class Invoice < ActiveRecord::Base
 
   def self.highest_unit_price
     InvoiceItem.all.select('invoice_id, sum(unit_price)')
-               .group('invoice_id').order('sum DESC').limit(1).first.invoice_id
+               .group('invoice_id')
+               .order('sum DESC')
+               .limit(1)
+               .first
+               .invoice_id
   end
 
   def self.lowest_unit_price
     InvoiceItem.all.select('invoice_id, sum(unit_price)')
-               .group('invoice_id').order('sum').limit(1).first.invoice_id
+               .group('invoice_id')
+               .order('sum ASC')
+               .limit(1)
+               .first
+               .invoice_id
   end
 
   def self.highest_quantity
     InvoiceItem.all.select('invoice_id, sum(quantity)')
-               .group('invoice_id').order('sum DESC').limit(1).first.invoice_id
+               .group('invoice_id')
+               .order('sum DESC')
+               .limit(1)
+               .first
+               .invoice_id
   end
 
   def self.lowest_quantity
     InvoiceItem.all.select('invoice_id, sum(quantity)')
-               .group('invoice_id').order('sum').limit(1).first.invoice_id
+               .group('invoice_id')
+               .order('sum ASC')
+               .limit(1)
+               .first
+               .invoice_id
   end
 end
