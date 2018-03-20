@@ -31,7 +31,6 @@ body {
 
 .display {
   padding: 10px;
-  background-color: #05A8AA;
   display: flex;
   flex-direction: row;
   justify-content: left;
@@ -52,6 +51,14 @@ body {
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.display:nth-child(even){
+  background-color: #05A8AA;
+}
+
+.display:nth-child(odd){
+  background-color: #4991a9;
 }
 
 .link_to_show {
