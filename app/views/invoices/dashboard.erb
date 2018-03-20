@@ -14,19 +14,19 @@
     </header>
 
     <section class="all_cards">
-      <section class='card'>
-        Status Percentages</br>
+      <section class='dashboard'>
+        <h2>Status Percentages</br></h2>
         Pending: <%= @invoices.pending_percentage %></br>
         Shipped: <%= @invoices.shipped_percentage %></br>
         Returned: <%= @invoices.returned_percentage %></br>
       </section>
-      <section class='card'>
-        Unit Prices</br>
+      <section class='dashboard'>
+        <h2>Unit Prices</br></h2>
         Highest Unit Price: <a href = "../invoices/<%= @invoices.highest_unit_price %>"><%= @invoices.highest_unit_price %></a></br>
         Lowest Unit Price: <a href = "../invoices/<%= @invoices.lowest_unit_price %>"><%= @invoices.lowest_unit_price %></a></br>
       </section>
-      <section class='card'>
-        Qauntities</br>
+      <section class='dashboard'>
+        <h2>Quantities</br></h2>
         Highest quantity: <a href = "../invoices/<%= @invoices.highest_quantity %>"><%= @invoices.highest_quantity %></a></br>
         Lowest quantity: <a href = "../invoices/<%= @invoices.lowest_quantity %>"><%= @invoices.lowest_quantity %></a></br>
       </section>
