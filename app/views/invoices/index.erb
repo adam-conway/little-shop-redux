@@ -1,37 +1,25 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
-      <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
-    <title>Invoices</title>
-  </head>
-  <body>
-    <%= erb :'partials/navigation' %>
-
-    <header class='header'>
-      <h1 id='header_title'>Invoices</h1></br>
-      <a class="link_to_show" href="/invoices-dashboard">Invoices Dashboard</a>
-    </header>
-      <section class ="background">
-        <section class="merchants_list">
-          <% @invoices.each do |invoice| %>
-          <section class='display'>
-          <a class="link_to_show" href="invoices/<%= invoice.id %>"><%= invoice.id %></a>
-          <div class="buttons">
-            <div class="edit_button">
-              <form action="/invoices/<%= invoice.id %>/edit" method="GET">
-                <input type="submit" value="edit"/>
-              </form>
-            </div>
-              <form action="/invoices/<%= invoice.id %>" method="POST">
-                <input type="hidden" name="_method" value="DELETE">
-                <input type="submit" value="delete"/>
-              </form>
-            </div>
-          </section>
-        <% end %>
+<% @title="All Invoices" %>
+<header class='header'>
+  <h1 id='header_title'>Invoices</h1></br>
+  <a class="link_to_show" href="/invoices-dashboard">Invoices Dashboard</a>
+</header>
+  <section class ="background">
+    <section class="merchants_list">
+      <% @invoices.each do |invoice| %>
+      <section class='display'>
+      <a class="link_to_show" href="invoices/<%= invoice.id %>"><%= invoice.id %></a>
+      <div class="buttons">
+        <div class="edit_button">
+          <form action="/invoices/<%= invoice.id %>/edit" method="GET">
+            <input type="submit" value="edit"/>
+          </form>
+        </div>
+          <form action="/invoices/<%= invoice.id %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="delete"/>
+          </form>
+        </div>
       </section>
-    </section>
-  </body>
-</html>
+    <% end %>
+  </section>
+</section>

@@ -1,34 +1,22 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
-    <title>Items</title>
-  </head>
-  <body>
-    <%= erb :'partials/navigation' %>
+<% @title="All Items" %>
+<header class='header'>
+  <h1 id='header_title'>Items</h1></br>
+  <a href="/items-dashboard">Items Dashboard</a></br>
+  <a class='create_button' href="/items/new">Create A New Item</a>
+</header>
 
-    <header class='header'>
-      <h1 id='header_title'>Items</h1></br>
-      <a href="/items-dashboard">Items Dashboard</a></br>
-      <a class='create_button' href="/items/new">Create A New Item</a>
-    </header>
-
-    <section class="background">
-      <section class="all_cards">
-        <% @items.each do |item| %>
-        <section class="card">
-            <img src="<%= item.image %>"><br>
-            <a class="link_to_show" href="items/<%= item.id %>"><%= item.title %></a></br>
-            <%= item.format_price %></br></br>
-          <form action="/items/<%= item.id %>" method="POST">
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="submit" value="delete"/>
-          </form>
-        </section>
-        <% end %>
-      </section>
+<section class="background">
+  <section class="all_cards">
+    <% @items.each do |item| %>
+    <section class="card">
+        <img src="<%= item.image %>"><br>
+        <a class="link_to_show" href="items/<%= item.id %>"><%= item.title %></a></br>
+        <%= item.format_price %></br></br>
+      <form action="/items/<%= item.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="delete"/>
+      </form>
     </section>
-  </body>
-</html>
+    <% end %>
+  </section>
+</section>

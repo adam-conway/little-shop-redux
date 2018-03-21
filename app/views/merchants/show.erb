@@ -1,43 +1,29 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
-    <title><%= @merchant.name %></title>
-  </head>
-  <body class = "background">
+<% @title="Merchant: #{@merchant.id}" %>
+<header class='header'>
+  <h1 id='header_title'><%= @merchant.name %></h1>
+  <div class="buttons">
+    <div>
+  <form action="/merchants/<%= @merchant.id %>/edit" method="GET">
+    <input type="submit" value="edit"/>
+  </form>
+</div>
+  <form action="/merchants/<%= @merchant.id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="delete"/>
+  </form>
+</div>
+</header>
 
-    <%= erb :'partials/navigation' %>
-
-    <header class='header'>
-      <h1 id='header_title'><%= @merchant.name %></h1>
-      <div class="buttons">
-        <div>
-      <form action="/merchants/<%= @merchant.id %>/edit" method="GET">
-        <input type="submit" value="edit"/>
-      </form>
-    </div>
-      <form action="/merchants/<%= @merchant.id %>" method="POST">
-        <input type="hidden" name="_method" value="DELETE">
-        <input type="submit" value="delete"/>
-      </form>
-    </div>
-    </header>
-
-      <section class="all_cards">
-        <% @merchant.items.each do |item| %>
-        <section class="card">
-            <img src="<%= item.image %>"><br>
-            <a class="link_to_show" href="../items/<%= item.id %>"><%= item.title %></a></br>
-            <%= item.format_price %></br></br>
-          <form action="/items/<%= item.id %>" method="POST">
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="submit" value="delete"/>
-          </form>
-        </section>
-        <% end %>
-      </section>
-
-  </body>
-</html>
+<section class="all_cards">
+  <% @merchant.items.each do |item| %>
+  <section class="card">
+    <img src="<%= item.image %>"><br>
+    <a class="link_to_show" href="../items/<%= item.id %>"><%= item.title %></a></br>
+    <%= item.format_price %></br></br>
+    <form action="/items/<%= item.id %>" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="delete"/>
+    </form>
+  </section>
+  <% end %>
+</section>
