@@ -9,7 +9,7 @@
   <body>
   <%= erb :'partials/navigation' %>
   <header class='header'>
-    <h1 id='header_title'>Invoice: <%= @invoice.merchant_id %> <%= @invoice.status %></h1></br>
+    <h1 id='header_title'>Invoice: <%= @invoice.id %> <%= @invoice.status %></h1></br>
     <div class="buttons">
       <div class="edit_button">
       <form action="/invoices/<%= @invoice.id %>/edit" method="GET">
