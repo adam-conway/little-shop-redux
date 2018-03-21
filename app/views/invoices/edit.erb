@@ -9,26 +9,32 @@
 <body>
   <%= erb :'partials/navigation' %>
   <header class='header'>
-    <h1 id='header_title'>Edit an Invoice</h1></br>
+    <h1 id='header_title'>Edit Invoice #<%= @invoice.id %></h1></br>
   </header>
 
+  <section class="merchant_form">
     <section class='entry_form'>
       <form action="/invoices/<%= @invoice.id %>" method='POST'>
         <input type='hidden' name="_method" value='PUT' />
+        Merchant:
+        <select id='merchants'>
+            <option> <%= @invoice.merchant.name %></option>
+        </select></br>
         Invoice Status:
           <select name="invoice[status]" id="statuses">
             <option value="Pending">Pending</option>
             <option value="Shipped">Shipped</option>
             <option value="Returned">Returned</option>
           </select></br>
-          Invoice ID:
-        <input type='text' name="invoice[merchant_id]" value="<%= @invoice.merchant_id %>"/><br/>
+          <div>
         <input type='submit', value='Edit'/>
       </form>
       <form action="/invoices/<%= @invoice.id %>" method="GET">
         <input type="submit" value="cancel"/>
+      </div>
       </form>
     </section>
+  </section>
 
   <section class="merchants_list">
     <section class='display'>

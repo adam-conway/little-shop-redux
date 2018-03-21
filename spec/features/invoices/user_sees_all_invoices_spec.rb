@@ -20,6 +20,7 @@ RSpec.describe 'User' do
       expect(current_path).to eq('/invoices-dashboard')
     end
     it 'can navigate to invoice item edit page' do
+      Merchant.create(name: "Merchant")
       Invoice.create(status: 'pending', merchant_id: 1)
 
       visit '/invoices'

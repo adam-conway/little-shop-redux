@@ -10,7 +10,8 @@
   <%= erb :'partials/navigation' %>
   <header class='header'>
     <h1 id='header_title'>Invoice: <%= @invoice.id %> <%= @invoice.status %></h1></br>
-    <a class="link_to_show" href="../merchants/<%= @invoice.merchant_id %>"><%=Merchant.find(@invoice.merchant_id).name%></a>
+    <a class="link_to_show" href="../merchants/<%= @invoice.merchant_id %>">
+    <%= Merchant.find(@invoice.merchant_id).name %></a>
     <div class="buttons">
       <div class="edit_button">
       <form action="/invoices/<%= @invoice.id %>/edit" method="GET">
