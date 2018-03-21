@@ -1,32 +1,20 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
-    <title>Items Dashboard</title>
-  </head>
-  <body>
-    <%= erb :'partials/navigation' %>
+<% @title="Item Dashboard" %>
+<header class='header'>
+  <h1 id='header_title'>Items Dashboard</h1></br>
+</header>
 
-    <header class='header'>
-      <h1 id='header_title'>Items Dashboard</h1></br>
-    </header>
-
-    <section class="all_cards">
-      <div class='dashboard'>
-        <h2>Total Item Count:</br></h2></br>
-        <p><%= @items.total_count %></p>
-      </div>
-      <div class='dashboard'>
-        <h2>Average Price Per Item:</br></h2></br>
-        <p><%= @items.average_price %></p>
-      </div>
-      <section class='dashboard'>
-        <h2>Item by Age:</br></h2></br>
-        <h4>Newest Item</br></h4></br><a href="/items/<%= @items.newest.id %>"> <%= @items.newest.title %></a></br></br>
-        <h4>Oldest Item</br></h4></br><a href="/items/<%= @items.oldest.id %>"><%= @items.oldest.title %></a>
-      </section>
-    </section>
-  </body>
-</html>
+<section class="all_cards">
+  <div class='dashboard'>
+    <h2>Total Item Count:</br></h2></br>
+    <p><%= @items.total_count %></p>
+  </div>
+  <div class='dashboard'>
+    <h2>Average Price Per Item:</br></h2></br>
+    <p><%= @items.average_price %></p>
+  </div>
+  <section class='dashboard'>
+    <h2>Item by Age:</br></h2></br>
+    <h4>Newest Item</br></h4></br><a href="/items/<%= @items.newest.id %>"> <%= @items.newest.title %></a></br></br>
+    <h4>Oldest Item</br></h4></br><a href="/items/<%= @items.oldest.id %>"><%= @items.oldest.title %></a>
+  </section>
+</section>

@@ -1,46 +1,33 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
-    <title> <%= @item.title %></title>
-  </head>
-  <body>
-    <%= erb :'partials/navigation' %>
-
-    <header class='header'>
-      <h1 id='header_title'><%= @item.title %></h1></br>
-        <div class="buttons">
-          <div>
-          <form action="/items/<%= @item.id %>/edit" method="GET">
-            <input type="submit" value="Edit"/>
-          </form>
-        </div>
-          <form action="/items/<%= @item.id %>" method="POST">
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="submit" value="delete"/>
-          </form>
-        </div>
-    </header>
-
-    <section class="all_cards">
-      <section class="card">
-        <h1> <a class="link_to_show" href="../merchants/<%= @item.merchant_id %>"><%=Merchant.find(@item.merchant_id).name%></a></h1></br>
-        <img src="<%= @item.image %>">
-      </section>
-      <section class="card">
-        <div>
-        <h1> <%= @item.title %> </h1></br>
-      </div>
+<% @title="Item: #{@item.id}" %>
+<header class='header'>
+  <h1 id='header_title'><%= @item.title %></h1></br>
+    <div class="buttons">
       <div>
-        <p><%= @item.format_price %></p></br>
-      </div>
-        <div>
-        <p><%= @item.description %></p></br>
-      </div>
-      </section>
-    </section>
+      <form action="/items/<%= @item.id %>/edit" method="GET">
+        <input type="submit" value="Edit"/>
+      </form>
+    </div>
+      <form action="/items/<%= @item.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="delete"/>
+      </form>
+    </div>
+</header>
 
-  </body>
-</html>
+<section class="all_cards">
+  <section class="card">
+    <h1> <a class="link_to_show" href="../merchants/<%= @item.merchant_id %>"><%=Merchant.find(@item.merchant_id).name%></a></h1></br>
+    <img src="<%= @item.image %>">
+  </section>
+  <section class="card">
+    <div>
+    <h1> <%= @item.title %> </h1></br>
+  </div>
+  <div>
+    <p><%= @item.format_price %></p></br>
+  </div>
+    <div>
+    <p><%= @item.description %></p></br>
+  </div>
+  </section>
+</section>

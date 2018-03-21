@@ -1,38 +1,26 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
-    <title>Merchants</title>
-  </head>
-  <body>
-    <%= erb :'partials/navigation' %>
-
-    <header class='header'>
-      <h1 id='header_title'>Merchants</h1></br>
-      <a class="link_to_show" href="/merchants-dashboard">Merchants Dashboard</a></br>
-      <a class='create_button' href="/merchants/new"> Create a New Merchant </a>
-    </header>
-      <section class ="background">
-        <section class="merchants_list">
-        <% @merchants.each do |merchant| %>
-          <section class='display'>
-            <a class="link_to_show" href="merchants/<%= merchant.id %>"><%= merchant.name %></a>
-            <div class="buttons">
-              <div class="edit_button">
-              <form action="/merchants/<%= merchant.id %>/edit" method="GET">
-                <input type="submit" value="edit"/>
-              </form>
-            </div>
-              <form action="/merchants/<%= merchant.id %>" method="POST">
-                <input type="hidden" name="_method" value="DELETE">
-                <input type="submit" value="delete"/>
-              </form>
-            </div>
-          </section>
-        <% end %>
+<% @title="All Merchants" %>
+<header class='header'>
+  <h1 id='header_title'>Merchants</h1></br>
+  <a class="link_to_show" href="/merchants-dashboard">Merchants Dashboard</a></br>
+  <a class='create_button' href="/merchants/new"> Create a New Merchant </a>
+</header>
+  <section class ="background">
+    <section class="merchants_list">
+    <% @merchants.each do |merchant| %>
+      <section class='display'>
+        <a class="link_to_show" href="merchants/<%= merchant.id %>"><%= merchant.name %></a>
+        <div class="buttons">
+          <div class="edit_button">
+          <form action="/merchants/<%= merchant.id %>/edit" method="GET">
+            <input type="submit" value="edit"/>
+          </form>
+        </div>
+          <form action="/merchants/<%= merchant.id %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="delete"/>
+          </form>
+        </div>
       </section>
-    </section>
-  </body>
-</html>
+    <% end %>
+  </section>
+</section>

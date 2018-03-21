@@ -1,31 +1,18 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
-      <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
-    <title>Edit Page: <%= @merchant.name %></title>
-  </head>
-  <body>
+<% @title="Edit A Merchant" %>
+<header class='header'>
+  <p id='header_title'>Edit Merchant Name</p>
+</header>
+<section class="merchant_form">
+  <section class='entry_form'>
+    <form action="/merchants/<%= @merchant.id %>" method='POST'>
+      <input type='hidden' name="_method" value='PUT' />
+      Name:
+      <input type='text' name="merchant[name]" value="<%= @merchant.name %>"/></br>
+      <input type='submit', value='Update Merchant'/>
+    </form>
 
-    <%= erb :'partials/navigation' %>
-
-    <header class='header'>
-      <p id='header_title'>Edit Merchant Name</p>
-    </header>
-    <section class="merchant_form">
-      <section class='entry_form'>
-        <form action="/merchants/<%= @merchant.id %>" method='POST'>
-          <input type='hidden' name="_method" value='PUT' />
-          Name:
-          <input type='text' name="merchant[name]" value="<%= @merchant.name %>"/></br>
-          <input type='submit', value='Update Merchant'/>
-        </form>
-
-        <form action="/merchants/<%= @merchant.id %>" method="GET">
-          <input type="submit" value="cancel"/>
-        </form>
-      </section>
-    </section>
-  </body>
-</html>
+    <form action="/merchants/<%= @merchant.id %>" method="GET">
+      <input type="submit" value="cancel"/>
+    </form>
+  </section>
+</section>

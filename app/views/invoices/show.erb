@@ -1,43 +1,33 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
-    <title>Invoice</title>
-  </head>
-  <body>
-  <%= erb :'partials/navigation' %>
-  <header class='header'>
-    <h1 id='header_title'>Invoice: <%= @invoice.id %> <%= @invoice.status %></h1>
-    Merchant:<a class="link_to_show" href="../merchants/<%= @invoice.merchant_id %>"> <%= Merchant.find(@invoice.merchant_id).name %></a>
-    <div class="buttons">
-      <div class="edit_button">
-      <form action="/invoices/<%= @invoice.id %>/edit" method="GET">
-        <input type="submit" value="edit"/>
-      </form>
-    </div>
-      <form action="/invoices/<%= @invoice.id %>" method="POST">
-        <input type="hidden" name="_method" value="DELETE">
-        <input type="submit" value="delete"/>
-      </form>
-    </div>
-  </header>
+<% @title="Invoice: #{@invoice.id}" %>
+<header class='header'>
+  <h1 id='header_title'>Invoice: <%= @invoice.id %> <%= @invoice.status %></h1>
+  Merchant:<a class="link_to_show" href="../merchants/<%= @invoice.merchant_id %>"> <%= Merchant.find(@invoice.merchant_id).name %></a>
+  <div class="buttons">
+    <div class="edit_button">
+    <form action="/invoices/<%= @invoice.id %>/edit" method="GET">
+      <input type="submit" value="edit"/>
+    </form>
+  </div>
+    <form action="/invoices/<%= @invoice.id %>" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="delete"/>
+    </form>
+  </div>
+</header>
 
-    <section class="merchants_list">
-      <section class='display'>
-        <p>Item id</p>
-        <p>Item title</p>
-        <p>Unit price</p>
-        <p>Quantity</p>
-      </section>
-    <% @invoice.items.each do |item| %>
-      <section class="display">
-        <a href = "/items/<%=item.id%>"> <%= item.id %> </a>
-        <p><%= item.title %></p>
-        <p><%= item.format_price %></p></br>
-        <p><%= item.quantity(@invoice) %></p>
-      </section>
-    <% end %>
+  <section class="merchants_list">
+    <section class='display'>
+      <p>Item id</p>
+      <p>Item title</p>
+      <p>Unit price</p>
+      <p>Quantity</p>
     </section>
-  </body>
+  <% @invoice.items.each do |item| %>
+    <section class="display">
+      <a href = "/items/<%=item.id%>"> <%= item.id %> </a>
+      <p><%= item.title %></p>
+      <p><%= item.format_price %></p></br>
+      <p><%= item.quantity(@invoice) %></p>
+    </section>
+  <% end %>
+  </section>
