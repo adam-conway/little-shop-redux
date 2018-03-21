@@ -29,8 +29,8 @@
         <% @merchant.items.each do |item| %>
         <section class="card">
             <img src="<%= item.image %>"><br>
-            <a class="link_to_show" href="../items/<%= item.id %>"><%= item.title %></a>
-            <%= item.price %>
+            <a class="link_to_show" href="../items/<%= item.id %>"><%= item.title %></a></br>
+            <%= item.format_price %></br></br>
           <form action="/items/<%= item.id %>" method="POST">
             <input type="hidden" name="_method" value="DELETE">
             <input type="submit" value="delete"/>
