@@ -29,14 +29,14 @@
       <input type="submit" value="cancel"/>
     </form>
   </section>
-
+  
   <section class="merchants_list">
     <% @invoice.items.each do |item| %>
       <section class="display">
         <a href = "/items/<%=item.id%>"> <%= item.id %> </a>
-        <%= item.title %>
-        <%= item.format_price %></br>
-        <%= item.quantity(@invoice) %></br>
+        <p><%= item.title %></p>
+        <p><%= item.format_price %></p></br>
+        <p><%= item.quantity(@invoice) %></p></br>
       </section>
     <% end %>
   </section>

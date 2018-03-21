@@ -23,17 +23,17 @@
     </div>
   </header>
 
-  <section class="background">
+  <!-- <section class="background"> -->
     <a class="link_to_show" href="../merchants/<%= @invoice.merchant_id %>"><%=Merchant.find(@invoice.merchant_id).name%></a></br>
       <section class="merchants_list">
       <% @invoice.items.each do |item| %>
         <section class="display">
-        <a href = "/items/<%=item.id%>"> <%= item.id %> </a>
-        <%= item.title %>
-        <%= item.format_price %></br>
-        <%= item.quantity(@invoice) %>
+          <a href = "/items/<%=item.id%>"> <%= item.id %> </a>
+          <p><%= item.title %></p>
+          <p><%= item.format_price %></p></br>
+          <p><%= item.quantity(@invoice) %></p>
         </section>
       <% end %>
       </section>
-  </section>
+  <!-- </section> -->
   </body>
