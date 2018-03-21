@@ -54,7 +54,7 @@ RSpec.describe 'User' do
 
         visit '/merchants'
         click_on 'LittleShop'
-        expect(current_path).to eq('/./')
+        expect(current_path).to eq('/')
       end
       it 'can link to merchants page' do
         Merchant.create(name:'Adam')

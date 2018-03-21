@@ -49,7 +49,19 @@ class Item < ActiveRecord::Base
     find_by(price: price)
   end
 
+  def cents_formatter(price)
+    cents = price.to_s.split('.').last
+    if cents.length == 0
+      "$#{price}.00"
+    elsif cents.length == 1
+      "$#{price}0"
+    else
+      "$#{price}"
+    end
+  end
+
   def format_price
+    cents_formatter(self.price)
     cents = self.price.to_s.split('.').last
     if cents.length == 0
       "$#{self.price}.00"
