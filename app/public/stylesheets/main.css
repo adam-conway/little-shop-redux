@@ -257,6 +257,18 @@ a.create_button:active {
   font-family: "Helvetica";
 }
 
+.invoice_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 250px;
+  height: 325px;
+  margin: 50px auto;
+  background-color: #05A8AA;
+  font-size: 24px;
+  font-family: "Helvetica";
+}
+
 .entry_form {
   display: flex;
   flex-direction: column;
