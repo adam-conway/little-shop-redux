@@ -25,6 +25,12 @@
   </header>
 
     <section class="merchants_list">
+      <section class='display'>
+        <p>Item id</p>
+        <p>Item title</p>
+        <p>Unit price</p>
+        <p>Quantity</p>
+      </section>
     <% @invoice.items.each do |item| %>
       <section class="display">
         <a href = "/items/<%=item.id%>"> <%= item.id %> </a>
