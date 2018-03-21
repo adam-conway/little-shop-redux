@@ -12,7 +12,6 @@
     <h1 id='header_title'>Edit an Invoice</h1></br>
   </header>
 
-  <section class="invoice_form">
     <section class='entry_form'>
       <form action="/invoices/<%= @invoice.id %>" method='POST'>
         <input type='hidden' name="_method" value='PUT' />
@@ -30,7 +29,6 @@
         <input type="submit" value="cancel"/>
       </form>
     </section>
-  </section>
 
   <section class="merchants_list">
     <section class='display'>
