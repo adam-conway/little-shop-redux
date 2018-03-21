@@ -106,6 +106,13 @@ RSpec.describe Item do
         expect(item2.format_price).to eq("$10.99")
       end
     end
+    context '.cents_formatter' do
+      it 'returns the price as a formatted string' do
+        item1 = Item.create(title: 'name', description: 'lalala', price: 10, image: 'url')
+
+        expect(Item.cents_formatter(10.5)).to eq("$10.50")
+      end
+    end
   end
 
   describe 'Instance Methods' do
